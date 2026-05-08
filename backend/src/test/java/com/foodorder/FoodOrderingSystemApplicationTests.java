@@ -1,4 +1,4 @@
-package com.example.food_ordering_system;
+package com.foodorder;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
