@@ -1,7 +1,8 @@
 package com.foodorder.enums;
 
-public enum PaymentStatus {
-    PENDING,
-    COMPLETED,
-    FAILED
+public enum OrderStatus {
+    PLACED,
+    PREPARING,
+    DELIVERED,
+    CANCELLED
 }
