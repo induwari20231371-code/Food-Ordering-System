@@ -1,8 +1,9 @@
-package com.foodorder.config;
+package com.foodorder.security;
 
 import com.foodorder.repository.UserRepository;
 import com.foodorder.security.JwtAuthenticationFilter;
 import com.foodorder.security.JwtUtils;
+import org.springframework.beans.factory.ObjectProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,11 +36,15 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@RequiredArgsConstructor
 public class SecurityConfig {
 
     private final JwtUtils jwtUtils;
-    private final UserRepository userRepository;
+    private final ObjectProvider<UserRepository> userRepositoryProvider;
+
+    public SecurityConfig(JwtUtils jwtUtils, ObjectProvider<UserRepository> userRepositoryProvider) {
+        this.jwtUtils = jwtUtils;
+        this.userRepositoryProvider = userRepositoryProvider;
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -98,7 +103,7 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return username -> userRepository.findByEmail(username)
+        return username -> userRepositoryProvider.getObject().findByEmail(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
     }
 
