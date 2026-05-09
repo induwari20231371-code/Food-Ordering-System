@@ -31503,3 +31503,376 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2026-05-09T21:06:58.933+05:30  WARN 31400 --- [food-ordering-system] [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/categories' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
 2026-05-09T21:06:58.950+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CategoryService    : Fetching all categories
 2026-05-09T21:07:09.501+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:07:50.741+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:07:50.742+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:07:50.759+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:07:50.760+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:07:55.930+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:07:55.935+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:07:55.938+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:07:55.959+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:07:55.960+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:07:55.974+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:08:18.175+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:08:18.175+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:08:18.191+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:08:18.192+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:31:16.434+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:16.434+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:16.435+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:31:16.465+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:16.465+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:16.466+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:31:16.483+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T21:31:16.492+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T21:31:16.497+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T21:31:18.279+05:30  WARN 31400 --- [food-ordering-system] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m34s449ms815µs900ns).
+2026-05-09T21:31:35.797+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:35.798+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:35.799+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:31:35.811+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:35.811+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:31:35.816+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:42.446+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:42.446+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:31:42.491+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:42.491+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:31:47.498+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:47.498+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:47.504+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:31:47.519+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:47.521+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:47.521+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:31:56.400+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:31:56.426+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:32:01.175+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:32:01.229+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:01.680+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T22:00:01.687+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:01.689+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:01.691+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:00:01.693+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T22:00:01.701+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T22:00:01.705+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:01.709+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:01.709+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:00:03.422+05:30  WARN 31400 --- [food-ordering-system] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m45s258ms59µs400ns).
+2026-05-09T22:00:04.659+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:04.660+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:04.660+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:00:04.670+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:04.670+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:04.670+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:00:23.855+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:23.862+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:00:23.876+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:23.876+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:00:37.923+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:37.966+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.controller.CategoryController        : POST /api/categories - name: French Fries 
+2026-05-09T22:00:37.966+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Creating category: French Fries 
+2026-05-09T22:00:37.985+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:37.985+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:00:40.125+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:40.126+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:40.126+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:00:40.146+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:40.154+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:00:40.154+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:03:44.530+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:03:44.546+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.controller.FoodItemController        : POST /api/food-items - name: French Fries
+2026-05-09T22:03:44.546+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-9] com.foodorder.service.FoodItemService    : Creating food item: French Fries
+2026-05-09T22:03:44.597+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:03:44.597+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:03:44.604+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:04:24.837+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:04:24.904+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.foodorder.controller.AuthController    : POST /api/auth/signup - email: puleeshasenarath@gmail.com
+2026-05-09T22:04:24.904+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.AuthService        : Registering new user with email: puleeshasenarath@gmail.com
+2026-05-09T22:04:25.064+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.AuthService        : Created cart for user: puleeshasenarath@gmail.com
+2026-05-09T22:04:25.095+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.AuthService        : User registered successfully: puleeshasenarath@gmail.com
+2026-05-09T22:04:25.176+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:04:32.606+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:04:32.626+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:04:34.329+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:04:34.329+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:04:34.354+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:04:37.949+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:04:37.971+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 6
+2026-05-09T22:04:37.971+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.CartService        : Adding food item 6 to cart for user 3
+2026-05-09T22:04:46.115+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:04:46.120+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 29
+2026-05-09T22:04:46.120+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.CartService        : Adding food item 29 to cart for user 3
+2026-05-09T22:04:51.150+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:04:51.178+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:05:08.501+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:05:08.510+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.foodorder.controller.OrderController   : POST /api/orders - user: 3
+2026-05-09T22:05:08.510+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.OrderService       : Placing order for user 3
+2026-05-09T22:05:08.540+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CartService        : Clearing cart for user 3
+2026-05-09T22:05:08.560+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.OrderService       : Order 1 placed successfully for user 3
+2026-05-09T22:05:08.595+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:05:08.632+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:05:23.058+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:05:23.062+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.controller.PaymentController         : POST /api/payments/order/1/process
+2026-05-09T22:05:23.062+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.PaymentService     : Processing payment for order 1
+2026-05-09T22:05:23.078+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.PaymentService     : Payment completed for order 1. Transaction: TXN-9F6A4231
+2026-05-09T22:05:23.097+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:05:26.069+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:05:26.107+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:05:34.119+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:05:34.139+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:07:37.292+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T22:07:37.550+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:13:59.083+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T22:13:59.563+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:06.513+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:06.525+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:08.033+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:08.038+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 3
+2026-05-09T22:14:08.038+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.CartService        : Adding food item 3 to cart for user 3
+2026-05-09T22:14:10.287+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:10.320+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:27.581+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:27.587+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.foodorder.controller.OrderController   : POST /api/orders - user: 3
+2026-05-09T22:14:27.587+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.OrderService       : Placing order for user 3
+2026-05-09T22:14:27.603+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CartService        : Clearing cart for user 3
+2026-05-09T22:14:27.619+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.OrderService       : Order 2 placed successfully for user 3
+2026-05-09T22:14:27.651+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:27.671+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:41.585+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:41.601+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.OrderService       : Cancelling order 2 for user 3
+2026-05-09T22:14:41.629+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:56.708+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:14:56.724+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:06.348+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:06.367+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:09.922+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:09.928+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 2
+2026-05-09T22:15:09.928+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CartService        : Adding food item 2 to cart for user 3
+2026-05-09T22:15:12.720+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:12.748+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:26.642+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:26.651+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.foodorder.controller.OrderController   : POST /api/orders - user: 3
+2026-05-09T22:15:26.653+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.OrderService       : Placing order for user 3
+2026-05-09T22:15:26.656+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CartService        : Clearing cart for user 3
+2026-05-09T22:15:26.676+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.OrderService       : Order 3 placed successfully for user 3
+2026-05-09T22:15:26.693+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:26.710+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:36.144+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:15:36.152+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.controller.PaymentController         : POST /api/payments/order/3/process
+2026-05-09T22:15:36.152+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.PaymentService     : Processing payment for order 3
+2026-05-09T22:15:36.152+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.PaymentService     : Payment completed for order 3. Transaction: TXN-899F5003
+2026-05-09T22:15:36.178+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:18:40.570+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T22:18:42.045+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T22:19:41.482+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:41.500+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:42.996+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:43.007+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:46.045+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:46.046+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:46.075+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:48.137+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:48.153+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 2
+2026-05-09T22:19:48.153+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CartService        : Adding food item 2 to cart for user 3
+2026-05-09T22:19:48.777+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:48.791+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 2
+2026-05-09T22:19:48.791+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.CartService        : Adding food item 2 to cart for user 3
+2026-05-09T22:19:50.403+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:50.407+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 3
+2026-05-09T22:19:50.408+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.CartService        : Adding food item 3 to cart for user 3
+2026-05-09T22:19:50.613+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:50.618+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 3
+2026-05-09T22:19:50.620+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CartService        : Adding food item 3 to cart for user 3
+2026-05-09T22:19:53.332+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:19:53.349+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:04.406+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:04.413+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.foodorder.controller.OrderController   : POST /api/orders - user: 3
+2026-05-09T22:20:04.413+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.OrderService       : Placing order for user 3
+2026-05-09T22:20:04.428+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CartService        : Clearing cart for user 3
+2026-05-09T22:20:04.444+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.OrderService       : Order 4 placed successfully for user 3
+2026-05-09T22:20:04.474+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:04.476+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:04.482+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.foodorder.controller.CartController    : DELETE /api/cart - user: 3
+2026-05-09T22:20:04.483+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.CartService        : Clearing cart for user 3
+2026-05-09T22:20:04.510+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:11.988+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:11.994+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.controller.PaymentController         : POST /api/payments/order/4/process
+2026-05-09T22:20:11.994+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.PaymentService     : Processing payment for order 4
+2026-05-09T22:20:12.010+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.PaymentService     : Payment completed for order 4. Transaction: TXN-6CDD489F
+2026-05-09T22:20:12.037+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:21.082+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:21.092+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:24.941+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:24.947+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 6
+2026-05-09T22:20:24.947+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.CartService        : Adding food item 6 to cart for user 3
+2026-05-09T22:20:27.976+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:27.983+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 10
+2026-05-09T22:20:27.984+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.CartService        : Adding food item 10 to cart for user 3
+2026-05-09T22:20:29.537+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:29.549+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:43.806+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:43.811+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.foodorder.controller.OrderController   : POST /api/orders - user: 3
+2026-05-09T22:20:43.811+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.OrderService       : Placing order for user 3
+2026-05-09T22:20:43.827+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CartService        : Clearing cart for user 3
+2026-05-09T22:20:43.843+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.OrderService       : Order 5 placed successfully for user 3
+2026-05-09T22:20:43.870+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:43.870+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:20:43.876+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.foodorder.controller.CartController    : DELETE /api/cart - user: 3
+2026-05-09T22:20:43.877+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.CartService        : Clearing cart for user 3
+2026-05-09T22:20:43.900+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:15.016+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:15.021+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.controller.PaymentController         : POST /api/payments/order/5/process
+2026-05-09T22:21:15.021+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.PaymentService     : Processing payment for order 5
+2026-05-09T22:21:15.021+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.PaymentService     : Payment completed for order 5. Transaction: TXN-EE6E8580
+2026-05-09T22:21:15.055+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:31.092+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:31.103+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.OrderService       : Cancelling order 5 for user 3
+2026-05-09T22:21:31.135+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:49.713+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:49.749+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:51.983+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:51.985+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 2
+2026-05-09T22:21:51.985+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CartService        : Adding food item 2 to cart for user 3
+2026-05-09T22:21:53.460+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:53.469+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 3
+2026-05-09T22:21:53.469+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CartService        : Adding food item 3 to cart for user 3
+2026-05-09T22:21:54.844+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:21:54.871+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:04.458+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:04.458+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.foodorder.controller.OrderController   : POST /api/orders - user: 3
+2026-05-09T22:22:04.458+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.OrderService       : Placing order for user 3
+2026-05-09T22:22:04.498+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CartService        : Clearing cart for user 3
+2026-05-09T22:22:04.506+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.OrderService       : Order 6 placed successfully for user 3
+2026-05-09T22:22:04.531+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:04.538+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:04.541+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.foodorder.controller.CartController    : DELETE /api/cart - user: 3
+2026-05-09T22:22:04.542+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CartService        : Clearing cart for user 3
+2026-05-09T22:22:04.613+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:09.364+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:09.384+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:28.036+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: puleeshasenarath@gmail.com
+2026-05-09T22:22:28.038+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.AuthService        : Sign-in attempt for email: puleeshasenarath@gmail.com
+2026-05-09T22:22:28.342+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.AuthService        : User signed in successfully: puleeshasenarath@gmail.com
+2026-05-09T22:22:28.387+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:32.651+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:32.669+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:38.795+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:38.837+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:50.004+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:50.009+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.controller.PaymentController         : POST /api/payments/order/6/process
+2026-05-09T22:22:50.009+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.PaymentService     : Processing payment for order 6
+2026-05-09T22:22:50.015+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.PaymentService     : Payment completed for order 6. Transaction: TXN-EFB1E16A
+2026-05-09T22:22:50.044+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:55.527+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:22:55.549+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.OrderService       : Cancelling order 6 for user 3
+2026-05-09T22:22:55.577+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:23:44.067+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin2@foodorder.com
+2026-05-09T22:23:44.069+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.AuthService        : Sign-in attempt for email: admin2@foodorder.com
+2026-05-09T22:23:44.217+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.AuthService        : User signed in successfully: admin2@foodorder.com
+2026-05-09T22:23:44.250+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:23:44.250+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:23:44.252+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:23:44.258+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:23:44.264+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:23:44.264+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:23:58.706+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:23:58.706+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:23:58.734+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:23:58.734+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:24:03.727+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:03.754+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:09.734+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:09.747+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:21.863+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:21.921+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:23.719+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:23.720+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:23.721+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:24:23.738+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:23.738+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:23.738+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:24:25.775+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:25.790+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:27.812+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:27.813+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:27.815+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:24:27.830+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:27.831+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:27.832+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:24:31.555+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:24:31.569+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-09T22:25:41.379+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin1@foodorder.com
+2026-05-09T22:25:41.379+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.AuthService        : Sign-in attempt for email: admin1@foodorder.com
+2026-05-09T22:25:41.488+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.AuthService        : User signed in successfully: admin1@foodorder.com
+2026-05-09T22:25:41.541+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:41.541+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:41.542+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:25:41.553+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:41.555+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:41.563+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:25:49.010+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:49.011+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:25:49.019+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:49.019+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:25:52.128+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:52.155+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:54.274+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:54.286+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:56.895+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:56.928+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:57.955+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:57.956+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:25:57.974+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:57.974+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:25:59.091+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:59.091+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:59.092+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:25:59.105+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:59.111+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:25:59.111+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:26:00.118+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:26:00.133+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:26:03.141+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:26:03.147+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.foodorder.controller.OrderController   : PUT /api/orders/1/status - status: PREPARING
+2026-05-09T22:26:03.149+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.OrderService       : Updating order 1 status to PREPARING
+2026-05-09T22:26:03.166+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:26:25.367+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: puleeshasenarath@gmail.com
+2026-05-09T22:26:25.368+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.AuthService        : Sign-in attempt for email: puleeshasenarath@gmail.com
+2026-05-09T22:26:25.482+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.AuthService        : User signed in successfully: puleeshasenarath@gmail.com
+2026-05-09T22:26:25.543+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:26:29.013+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:26:29.040+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:26:53.038+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:26:53.056+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:29:22.823+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T22:29:22.828+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T22:29:22.829+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:29:22.830+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:29:22.830+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:29:22.837+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:29:22.837+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T22:29:22.837+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T22:29:23.591+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:29:23.598+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:31:17.884+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:31:17.884+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:31:17.890+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:31:41.663+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:31:41.683+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:31:51.598+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:31:51.631+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:31:54.527+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:31:54.542+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:32:44.340+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:32:44.348+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.foodorder.controller.AuthController    : POST /api/auth/signup - email: puleeshasenarath@gmail.com
+2026-05-09T22:32:44.348+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.AuthService        : Registering new user with email: puleeshasenarath@gmail.com
+2026-05-09T22:32:44.372+05:30 ERROR 31400 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.exception.GlobalExceptionHandler     : Duplicate resource: Email already registered: puleeshasenarath@gmail.com
+2026-05-09T22:33:32.605+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T22:33:32.607+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.foodorder.controller.AuthController    : POST /api/auth/signup - email: induwaripuleesha@gmail.com
+2026-05-09T22:33:32.607+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.AuthService        : Registering new user with email: induwaripuleesha@gmail.com
+2026-05-09T22:33:32.753+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.AuthService        : Created cart for user: induwaripuleesha@gmail.com
+2026-05-09T22:33:32.753+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.AuthService        : User registered successfully: induwaripuleesha@gmail.com
+2026-05-09T22:33:35.316+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: induwaripuleesha@gmail.com
+2026-05-09T22:33:35.334+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: induwaripuleesha@gmail.com
+2026-05-09T22:33:36.380+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: induwaripuleesha@gmail.com
+2026-05-09T22:33:36.381+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: induwaripuleesha@gmail.com
+2026-05-09T22:33:36.396+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: induwaripuleesha@gmail.com

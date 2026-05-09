@@ -34,6 +34,9 @@ export default function OrdersPage() {
   useEffect(() => { fetchOrders() }, [])
 
   const handleCancel = async (orderId) => {
+    const confirmed = window.confirm('Are you sure you want to cancel this order? This action cannot be undone.')
+    if (!confirmed) return
+
     try {
       await orderAPI.cancelOrder(orderId)
       toast.success('Order cancelled')

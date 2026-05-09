@@ -26,6 +26,7 @@ export default function CartPage() {
     setPlacing(true)
     try {
       await orderAPI.placeOrder({ deliveryAddress: address, specialInstructions: notes, paymentMethod: method })
+      clearCart()
       toast.success('Order placed! 🎉')
       navigate('/orders')
     } catch (err) {
@@ -79,7 +80,11 @@ export default function CartPage() {
                 </button>
               </div>
             ))}
-            <button onClick={clearCart} className="text-sm text-red-400 hover:text-red-600 flex items-center gap-1">
+            <button onClick={() => {
+              if (window.confirm('Are you sure you want to clear your entire cart?')) {
+                clearCart()
+              }
+            }} className="text-sm text-red-400 hover:text-red-600 flex items-center gap-1">
               <FiTrash2 size={14} /> Clear cart
             </button>
           </div>

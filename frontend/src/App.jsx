@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from './context/AuthContext'
 import { CartProvider } from './context/CartContext'
 
 import Navbar      from './components/layout/Navbar'
+import Footer     from './components/layout/Footer'
 import HomePage    from './pages/HomePage'
 import LoginPage   from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
@@ -30,28 +31,31 @@ function AdminRoute({ children }) {
 
 function AppRoutes() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <Routes>
-        <Route path="/"         element={<HomePage />} />
-        <Route path="/menu"     element={<MenuPage />} />
-        <Route path="/login"    element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/"         element={<HomePage />} />
+          <Route path="/menu"     element={<MenuPage />} />
+          <Route path="/login"    element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
 
-        <Route path="/cart" element={
-          <PrivateRoute><CartPage /></PrivateRoute>
-        } />
-        <Route path="/orders" element={
-          <PrivateRoute><OrdersPage /></PrivateRoute>
-        } />
-        <Route path="/admin" element={
-          <AdminRoute><AdminPage /></AdminRoute>
-        } />
+          <Route path="/cart" element={
+            <PrivateRoute><CartPage /></PrivateRoute>
+          } />
+          <Route path="/orders" element={
+            <PrivateRoute><OrdersPage /></PrivateRoute>
+          } />
+          <Route path="/admin" element={
+            <AdminRoute><AdminPage /></AdminRoute>
+          } />
 
-        {/* Catch-all */}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </>
+          {/* Catch-all */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   )
 }
 
