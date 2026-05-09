@@ -13,8 +13,14 @@ function FoodItemsTab() {
   const [loading, setLoading] = useState(true)
 
   const fetchAll = async () => {
-    const [f, c] = await Promise.all([foodAPI.getAll(), categoryAPI.getAll()])
-    setItems(f.data.data); setCategories(c.data.data); setLoading(false)
+    try {
+      const [f, c] = await Promise.all([foodAPI.getAll(), categoryAPI.getAll()])
+      setItems(f?.data?.data || []); setCategories(c?.data?.data || []); setLoading(false)
+    } catch (err) {
+      console.error('Error loading food items:', err)
+      toast.error('Failed to load food items')
+      setItems([]); setCategories([]); setLoading(false)
+    }
   }
   useEffect(() => { fetchAll() }, [])
 
@@ -122,7 +128,13 @@ function CategoriesTab() {
   const [editId,  setEditId]  = useState(null)
 
   const fetchAll = async () => {
-    const res = await categoryAPI.getAll(); setCats(res.data.data)
+    try {
+      const res = await categoryAPI.getAll(); setCats(res?.data?.data || [])
+    } catch (err) {
+      console.error('Error loading categories:', err)
+      toast.error('Failed to load categories')
+      setCats([])
+    }
   }
   useEffect(() => { fetchAll() }, [])
 
@@ -190,7 +202,13 @@ function OrdersTab() {
   const [loading, setLoading] = useState(true)
 
   const fetchAll = async () => {
-    const res = await orderAPI.getOrders(); setOrders(res.data.data); setLoading(false)
+    try {
+      const res = await orderAPI.getOrders(); setOrders(res?.data?.data || []); setLoading(false)
+    } catch (err) {
+      console.error('Error loading orders:', err)
+      toast.error('Failed to load orders')
+      setOrders([]); setLoading(false)
+    }
   }
   useEffect(() => { fetchAll() }, [])
 
@@ -243,7 +261,13 @@ function UsersTab() {
   const [loading, setLoading] = useState(true)
 
   const fetchAll = async () => {
-    const res = await userAPI.getAll(); setUsers(res.data.data); setLoading(false)
+    try {
+      const res = await userAPI.getAll(); setUsers(res?.data?.data || []); setLoading(false)
+    } catch (err) {
+      console.error('Error loading users:', err)
+      toast.error('Failed to load users')
+      setUsers([]); setLoading(false)
+    }
   }
   useEffect(() => { fetchAll() }, [])
 
