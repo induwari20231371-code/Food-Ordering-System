@@ -2,6 +2,7 @@ package com.foodorder.config;
 
 import com.foodorder.repository.UserRepository;
 import com.foodorder.security.JwtAuthenticationFilter;
+import com.foodorder.security.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,7 +38,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final JwtAuthenticationFilter jwtAuthFilter;
+    private final JwtUtils jwtUtils;
     private final UserRepository userRepository;
 
     @Bean
@@ -71,7 +72,7 @@ public class SecurityConfig {
             // Add custom authentication provider
             .authenticationProvider(authenticationProvider())
             // Add JWT filter before Spring's default auth filter
-            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+            .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
@@ -117,5 +118,10 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+        return new JwtAuthenticationFilter(jwtUtils, userDetailsService());
     }
 }
