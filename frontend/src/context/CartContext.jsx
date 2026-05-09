@@ -10,12 +10,36 @@ export function CartProvider({ children }) {
   const [cart, setCart]         = useState(null)
   const [loading, setLoading]   = useState(false)
 
+  // Normalize backend cart response to frontend shape
+  const normalizeCart = (serverCart) => {
+    if (!serverCart) return null
+    const normalizedItems = (serverCart.items || []).map(i => ({
+      id: i.id,
+      quantity: i.quantity,
+      foodItem: {
+        id: i.foodItemId,
+        name: i.foodItemName,
+        price: i.unitPrice,
+      },
+      subtotal: i.subtotal,
+    }))
+
+    return {
+      id: serverCart.id,
+      userId: serverCart.userId,
+      cartItems: normalizedItems,
+      totalAmount: serverCart.totalAmount,
+      createdAt: serverCart.createdAt,
+      updatedAt: serverCart.updatedAt,
+    }
+  }
+
   const fetchCart = useCallback(async () => {
     if (!isLoggedIn || isAdmin) return
     try {
       setLoading(true)
       const res = await cartAPI.getCart()
-      setCart(res.data.data)
+      setCart(normalizeCart(res.data.data))
     } catch (e) {
       console.error(e)
     } finally {
@@ -28,7 +52,7 @@ export function CartProvider({ children }) {
   const addItem = async (foodItemId, quantity = 1) => {
     try {
       const res = await cartAPI.addItem({ foodItemId, quantity })
-      setCart(res.data.data)
+      setCart(normalizeCart(res.data.data))
       toast.success('Added to cart!')
     } catch (e) {
       toast.error(e.response?.data?.message || 'Failed to add item')
@@ -38,7 +62,7 @@ export function CartProvider({ children }) {
   const updateItem = async (cartItemId, quantity) => {
     try {
       const res = await cartAPI.updateItem(cartItemId, quantity)
-      setCart(res.data.data)
+      setCart(normalizeCart(res.data.data))
     } catch (e) {
       toast.error('Failed to update')
     }
@@ -47,7 +71,7 @@ export function CartProvider({ children }) {
   const removeItem = async (cartItemId) => {
     try {
       const res = await cartAPI.removeItem(cartItemId)
-      setCart(res.data.data)
+      setCart(normalizeCart(res.data.data))
       toast.success('Item removed')
     } catch (e) {
       toast.error('Failed to remove')
@@ -57,7 +81,7 @@ export function CartProvider({ children }) {
   const clearCart = async () => {
     try {
       const res = await cartAPI.clearCart()
-      setCart(res.data.data)
+      setCart(normalizeCart(res.data.data))
     } catch (e) {
       console.error(e)
     }
