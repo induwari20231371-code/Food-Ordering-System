@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useCart } from '../context/CartContext'
 import { orderAPI } from '../api/services'
 import { useNavigate, Link } from 'react-router-dom'
@@ -6,7 +6,7 @@ import { FiTrash2, FiPlus, FiMinus, FiShoppingBag } from 'react-icons/fi'
 import toast from 'react-hot-toast'
 
 export default function CartPage() {
-  const { cart, updateItem, removeItem, clearCart, totalAmount } = useCart()
+  const { cart, updateItem, removeItem, clearCart, totalAmount, fetchCart } = useCart()
   const navigate = useNavigate()
   const [address,  setAddress]  = useState('')
   const [notes,    setNotes]    = useState('')
@@ -14,6 +14,11 @@ export default function CartPage() {
   const [placing,  setPlacing]  = useState(false)
 
   const items = cart?.cartItems ?? []
+
+  // Ensure cart is synced when this page mounts
+  useEffect(() => {
+    fetchCart()
+  }, [fetchCart])
 
   const handlePlaceOrder = async () => {
     if (!address.trim()) { toast.error('Please enter a delivery address'); return }
