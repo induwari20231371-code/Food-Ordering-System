@@ -81,12 +81,12 @@ function FoodCard({ item }) {
   const imageUrl = getFoodImageUrl(item)
 
   return (
-    <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+    <div className="group bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-xl flex flex-col">
       <div className="h-44 bg-orange-100 overflow-hidden">
         <img
           src={imageUrl}
           alt={item.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
           loading="lazy"
           onError={(event) => {
             event.currentTarget.onerror = null
@@ -94,7 +94,7 @@ function FoodCard({ item }) {
           }}
         />
       </div>
-      <div className="p-4 flex flex-col flex-1">
+      <div className="p-4 flex flex-col flex-1 transition-colors duration-300 group-hover:bg-orange-50">
         <div className="flex justify-between items-start mb-1">
           <h3 className="font-bold text-gray-800 text-lg leading-tight">{item.name}</h3>
           <span className={`text-xs px-2 py-0.5 rounded-full font-medium flex-shrink-0 ml-2 ${

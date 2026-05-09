@@ -17440,3 +17440,5 @@ Caused by: java.lang.StackOverflowError: null
 2026-05-09T19:14:37.888+05:30 DEBUG 2436 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
 2026-05-09T19:14:39.903+05:30 DEBUG 2436 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
 2026-05-09T19:14:48.891+05:30 DEBUG 2436 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T19:16:46.882+05:30 DEBUG 2436 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
+2026-05-09T19:18:15.873+05:30 DEBUG 2436 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: puleeshasenarath@gmail.com
