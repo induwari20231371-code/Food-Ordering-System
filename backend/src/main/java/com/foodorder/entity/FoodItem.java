@@ -3,6 +3,7 @@ package com.foodorder.entity;
 import com.foodorder.enums.FoodItemStatus;
 import jakarta.persistence.*;
 import lombok.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -44,6 +45,7 @@ public class FoodItem {
     @JoinColumn(name = "category_id", nullable = false)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
+    @JsonBackReference
     private Category category;
 
     @Column(name = "created_at")

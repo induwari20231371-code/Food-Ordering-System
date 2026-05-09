@@ -2,7 +2,7 @@ package com.foodorder.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -36,7 +36,7 @@ public class Category {
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JsonIgnore
+    @JsonManagedReference
     private List<FoodItem> foodItems;
 
     @Column(name = "created_at")

@@ -31408,3 +31408,98 @@ Caused by: java.lang.StackOverflowError: null
 2026-05-09T21:01:19.467+05:30  INFO 33084 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : Started FoodOrderingApplication in 4.078 seconds (process running for 4.401)
 2026-05-09T21:01:19.728+05:30  INFO 33084 --- [food-ordering-system] [main] c.f.service.AdminAccountInitializer      : Predefined admin account is ready: admin1@foodorder.com
 2026-05-09T21:01:19.827+05:30  INFO 33084 --- [food-ordering-system] [main] c.f.service.AdminAccountInitializer      : Predefined admin account is ready: admin2@foodorder.com
+2026-05-09T21:01:39.002+05:30  INFO 33084 --- [food-ordering-system] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-09T21:01:39.002+05:30  INFO 33084 --- [food-ordering-system] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-09T21:01:39.004+05:30  INFO 33084 --- [food-ordering-system] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-05-09T21:01:39.129+05:30 ERROR 33084 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T21:01:39.133+05:30  WARN 33084 --- [food-ordering-system] [http-nio-8080-exec-7] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/cart' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-05-09T21:01:39.147+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:01:39.147+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:01:39.158+05:30 ERROR 33084 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T21:01:39.166+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-9] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:01:39.166+05:30 ERROR 33084 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Cannot set user authentication: User not found: test@example.com
+2026-05-09T21:01:39.233+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:01:39.234+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:01:39.235+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:01:51.611+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:01:51.611+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:01:51.612+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:01:51.623+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:01:51.624+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-9] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:01:51.631+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-09T21:02:51.408+05:30  INFO 18248 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : Starting FoodOrderingApplication using Java 21.0.9 with PID 18248 (D:\CMJD\CW3\food-ordering-system\backend\target\classes started by S.Puleesha induwari in D:\CMJD\CW3\food-ordering-system\backend)
+2026-05-09T21:02:51.410+05:30 DEBUG 18248 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-05-09T21:02:51.410+05:30  INFO 18248 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-05-09T21:02:51.986+05:30  INFO 18248 --- [food-ordering-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-09T21:02:52.070+05:30  INFO 18248 --- [food-ordering-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 7 JPA repository interfaces.
+2026-05-09T21:02:52.549+05:30  INFO 18248 --- [food-ordering-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-09T21:02:52.556+05:30  INFO 18248 --- [food-ordering-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-09T21:02:52.556+05:30  INFO 18248 --- [food-ordering-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-05-09T21:02:52.626+05:30  INFO 18248 --- [food-ordering-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-09T21:02:52.626+05:30  INFO 18248 --- [food-ordering-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1173 ms
+2026-05-09T21:02:52.683+05:30 DEBUG 18248 --- [food-ordering-system] [main] c.f.security.JwtAuthenticationFilter     : Filter 'jwtAuthenticationFilter' configured for use
+2026-05-09T21:02:52.764+05:30  INFO 18248 --- [food-ordering-system] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-09T21:02:52.799+05:30  INFO 18248 --- [food-ordering-system] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-09T21:02:52.822+05:30  INFO 18248 --- [food-ordering-system] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-09T21:02:52.979+05:30  INFO 18248 --- [food-ordering-system] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-09T21:02:53.000+05:30  INFO 18248 --- [food-ordering-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-09T21:02:53.139+05:30  INFO 18248 --- [food-ordering-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:fooddb user=SA
+2026-05-09T21:02:53.139+05:30  INFO 18248 --- [food-ordering-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-09T21:02:54.056+05:30  INFO 18248 --- [food-ordering-system] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-09T21:02:54.139+05:30  INFO 18248 --- [food-ordering-system] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-09T21:02:54.784+05:30  WARN 18248 --- [food-ordering-system] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-09T21:02:55.048+05:30  INFO 18248 --- [food-ordering-system] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6908674b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a3e458, org.springframework.security.web.context.SecurityContextHolderFilter@62966c9f, org.springframework.security.web.header.HeaderWriterFilter@5a2297d7, org.springframework.web.filter.CorsFilter@4b74a4d, org.springframework.security.web.authentication.logout.LogoutFilter@71f86562, com.foodorder.security.JwtAuthenticationFilter@315105f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6915351c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2ac0cb64, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63df2eb8, org.springframework.security.web.session.SessionManagementFilter@10c67c1c, org.springframework.security.web.access.ExceptionTranslationFilter@2703785e, org.springframework.security.web.access.intercept.AuthorizationFilter@6421bc7e]
+2026-05-09T21:02:55.277+05:30  WARN 18248 --- [food-ordering-system] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-05-09T21:02:55.284+05:30  INFO 18248 --- [food-ordering-system] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-09T21:02:55.284+05:30  INFO 18248 --- [food-ordering-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-09T21:02:55.284+05:30  INFO 18248 --- [food-ordering-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-09T21:02:55.298+05:30  INFO 18248 --- [food-ordering-system] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-09T21:02:55.311+05:30 ERROR 18248 --- [food-ordering-system] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-05-09T21:04:15.487+05:30 DEBUG 33084 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:06:12.070+05:30  INFO 31400 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : Starting FoodOrderingApplication using Java 21.0.9 with PID 31400 (D:\CMJD\CW3\food-ordering-system\backend\target\classes started by S.Puleesha induwari in D:\CMJD\CW3\food-ordering-system\backend)
+2026-05-09T21:06:12.071+05:30 DEBUG 31400 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-05-09T21:06:12.072+05:30  INFO 31400 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-05-09T21:06:12.659+05:30  INFO 31400 --- [food-ordering-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-09T21:06:12.733+05:30  INFO 31400 --- [food-ordering-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 7 JPA repository interfaces.
+2026-05-09T21:06:13.202+05:30  INFO 31400 --- [food-ordering-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-09T21:06:13.211+05:30  INFO 31400 --- [food-ordering-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-09T21:06:13.211+05:30  INFO 31400 --- [food-ordering-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-05-09T21:06:13.279+05:30  INFO 31400 --- [food-ordering-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-09T21:06:13.280+05:30  INFO 31400 --- [food-ordering-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1163 ms
+2026-05-09T21:06:13.327+05:30 DEBUG 31400 --- [food-ordering-system] [main] c.f.security.JwtAuthenticationFilter     : Filter 'jwtAuthenticationFilter' configured for use
+2026-05-09T21:06:13.408+05:30  INFO 31400 --- [food-ordering-system] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-09T21:06:13.447+05:30  INFO 31400 --- [food-ordering-system] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-09T21:06:13.474+05:30  INFO 31400 --- [food-ordering-system] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-09T21:06:13.646+05:30  INFO 31400 --- [food-ordering-system] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-09T21:06:13.665+05:30  INFO 31400 --- [food-ordering-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-09T21:06:13.814+05:30  INFO 31400 --- [food-ordering-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:fooddb user=SA
+2026-05-09T21:06:13.815+05:30  INFO 31400 --- [food-ordering-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-09T21:06:14.636+05:30  INFO 31400 --- [food-ordering-system] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-09T21:06:14.713+05:30  INFO 31400 --- [food-ordering-system] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-09T21:06:15.275+05:30  WARN 31400 --- [food-ordering-system] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-09T21:06:15.518+05:30  INFO 31400 --- [food-ordering-system] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4b74a4d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63df2eb8, org.springframework.security.web.context.SecurityContextHolderFilter@6915351c, org.springframework.security.web.header.HeaderWriterFilter@39d37da8, org.springframework.web.filter.CorsFilter@49c72fb7, org.springframework.security.web.authentication.logout.LogoutFilter@14f254f, com.foodorder.security.JwtAuthenticationFilter@315105f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7be3a837, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@247d44b4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@565983f3, org.springframework.security.web.session.SessionManagementFilter@3f7f9d3f, org.springframework.security.web.access.ExceptionTranslationFilter@5a2297d7, org.springframework.security.web.access.intercept.AuthorizationFilter@5e572b08]
+2026-05-09T21:06:15.750+05:30  INFO 31400 --- [food-ordering-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-09T21:06:15.756+05:30  INFO 31400 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : Started FoodOrderingApplication in 4.011 seconds (process running for 4.313)
+2026-05-09T21:06:16.032+05:30  INFO 31400 --- [food-ordering-system] [main] c.f.service.AdminAccountInitializer      : Predefined admin account is ready: admin1@foodorder.com
+2026-05-09T21:06:16.124+05:30  INFO 31400 --- [food-ordering-system] [main] c.f.service.AdminAccountInitializer      : Predefined admin account is ready: admin2@foodorder.com
+2026-05-09T21:06:58.919+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-09T21:06:58.920+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-09T21:06:58.922+05:30  INFO 31400 --- [food-ordering-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-05-09T21:06:58.933+05:30  WARN 31400 --- [food-ordering-system] [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/categories' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-05-09T21:06:58.950+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-09T21:07:09.501+05:30 DEBUG 31400 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CategoryService    : Fetching all categories
