@@ -8,6 +8,7 @@ import toast from 'react-hot-toast'
 export default function CartPage() {
   const { cart, updateItem, removeItem, clearCart, totalAmount, fetchCart } = useCart()
   const navigate = useNavigate()
+  const deliveryFee = 200
   const [address,  setAddress]  = useState('')
   const [notes,    setNotes]    = useState('')
   const [method,   setMethod]   = useState('CASH_ON_DELIVERY')
@@ -88,9 +89,9 @@ export default function CartPage() {
             <div className="bg-white rounded-2xl shadow-sm p-6 space-y-4 sticky top-20">
               <h2 className="text-xl font-bold text-gray-800">Order Summary</h2>
               <div className="flex justify-between text-gray-600 text-sm"><span>Subtotal</span><span>LKR {parseFloat(totalAmount).toFixed(2)}</span></div>
-              <div className="flex justify-between text-gray-600 text-sm"><span>Delivery</span><span className="text-green-500 font-medium">Free</span></div>
+              <div className="flex justify-between text-gray-600 text-sm"><span>Delivery</span><span className="text-orange-500 font-medium">LKR {deliveryFee.toFixed(2)}</span></div>
               <div className="border-t pt-3 flex justify-between font-bold text-lg">
-                <span>Total</span><span className="text-orange-500">LKR {parseFloat(totalAmount).toFixed(2)}</span>
+                <span>Total</span><span className="text-orange-500">LKR {(parseFloat(totalAmount) + deliveryFee).toFixed(2)}</span>
               </div>
 
               <div>
