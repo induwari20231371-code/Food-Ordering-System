@@ -21,7 +21,6 @@ import java.io.IOException;
  * JWT authentication filter that runs once per request.
  * Extracts and validates the JWT token from the Authorization header.
  */
-@Component
 @RequiredArgsConstructor
 @Slf4j
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
