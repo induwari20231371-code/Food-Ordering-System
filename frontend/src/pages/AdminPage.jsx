@@ -36,7 +36,14 @@ function FoodItemsTab() {
 
   const handleEdit = (item) => {
     setEditId(item.id)
-    setForm({ name: item.name, description: item.description||'', price: item.price, imageUrl: item.imageUrl||'', status: item.status, categoryId: item.categoryId })
+    setForm({
+      name: item.name || '',
+      description: item.description || '',
+      price: item.price ?? '',
+      imageUrl: item.imageUrl || '',
+      status: item.status || 'AVAILABLE',
+      categoryId: item.categoryId ?? item.category?.id ?? ''
+    })
   }
 
   const handleDelete = async (id) => {

@@ -95,7 +95,8 @@ public class FoodItemService {
     public void deleteFoodItem(Long id) {
         log.info("Deleting food item id: {}", id);
         FoodItem foodItem = findById(id);
-        foodItemRepository.delete(foodItem);
+        foodItem.setStatus(FoodItemStatus.OUT_OF_STOCK);
+        foodItemRepository.save(foodItem);
     }
 
     public FoodItem findById(Long id) {
