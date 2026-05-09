@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-orange-500 text-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="w-full px-3 sm:px-6 py-3 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold tracking-tight">🍔 FoodOrder</Link>
