@@ -59,12 +59,33 @@ export default function MenuPage() {
   const [loading,    setLoading]    = useState(true)
 
   useEffect(() => {
-    Promise.all([foodAPI.getAvailable(), categoryAPI.getAll()])
-      .then(([foodRes, catRes]) => {
-        setItems(foodRes.data.data)
-        setCategories(catRes.data.data)
+    foodAPI.getAvailable()
+      .then((foodRes) => {
+        console.log('Food API Response:', foodRes)
+        const foodData = Array.isArray(foodRes.data.data) ? foodRes.data.data : []
+        setItems(foodData)
+        
+        // Extract unique categories from food items
+        const uniqueCategories = []
+        const categoryIds = new Set()
+        foodData.forEach(item => {
+          if (!categoryIds.has(item.categoryId)) {
+            categoryIds.add(item.categoryId)
+            uniqueCategories.push({
+              id: item.categoryId,
+              name: item.categoryName
+            })
+          }
+        })
+        console.log('Extracted categories:', uniqueCategories)
+        setCategories(uniqueCategories)
       })
-      .catch(() => toast.error('Failed to load menu'))
+      .catch((err) => {
+        console.error('Menu API Error:', err)
+        toast.error('Failed to load menu: ' + (err.message || 'Unknown error'))
+        setItems([])
+        setCategories([])
+      })
       .finally(() => setLoading(false))
   }, [])
 
