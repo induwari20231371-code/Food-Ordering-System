@@ -5,6 +5,8 @@ import com.foodorder.dto.SignInRequest;
 import com.foodorder.dto.SignUpRequest;
 import com.foodorder.entity.Cart;
 import com.foodorder.entity.User;
+import com.foodorder.enums.Role;
+import com.foodorder.exception.BusinessException;
 import com.foodorder.exception.DuplicateResourceException;
 import com.foodorder.repository.CartRepository;
 import com.foodorder.repository.UserRepository;
@@ -18,6 +20,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Set;
+
 /**
  * Service handling user registration and authentication.
  */
@@ -25,6 +29,11 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Slf4j
 public class AuthService {
+
+    public static final Set<String> ALLOWED_ADMIN_EMAILS = Set.of(
+            "admin1@foodorder.com",
+            "admin2@foodorder.com"
+    );
 
     private final UserRepository userRepository;
     private final CartRepository cartRepository;
@@ -42,6 +51,10 @@ public class AuthService {
     public AuthResponse signUp(SignUpRequest request) {
         log.info("Registering new user with email: {}", request.getEmail());
 
+        if (Role.ADMIN.equals(request.getRole())) {
+            throw new BusinessException("Admin accounts cannot be self-registered. Use predefined admin credentials.");
+        }
+
         // Check if email is already in use
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new DuplicateResourceException("Email already registered: " + request.getEmail());
@@ -53,7 +66,7 @@ public class AuthService {
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .phone(request.getPhone())
-                .role(request.getRole())
+            .role(Role.CUSTOMER)
                 .build();
 
         User savedUser = userRepository.save(user);
@@ -86,6 +99,11 @@ public class AuthService {
         );
 
         User user = (User) auth.getPrincipal();
+
+        if (Role.ADMIN.equals(user.getRole()) && !ALLOWED_ADMIN_EMAILS.contains(user.getEmail().toLowerCase())) {
+            throw new BusinessException("This admin account is not authorized.");
+        }
+
         String token = jwtUtils.generateToken(user);
 
         log.info("User signed in successfully: {}", user.getEmail());

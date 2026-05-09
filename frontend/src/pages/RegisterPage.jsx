@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 export default function RegisterPage() {
   const { signUp } = useAuth()
   const navigate   = useNavigate()
-  const [form, setForm]       = useState({ name: '', email: '', password: '', phone: '', role: 'CUSTOMER' })
+  const [form, setForm]       = useState({ name: '', email: '', password: '', phone: '' })
   const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
@@ -50,16 +50,6 @@ export default function RegisterPage() {
             </div>
           ))}
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Account Type</label>
-            <select
-              name="role" value={form.role} onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-400"
-            >
-              <option value="CUSTOMER">Customer</option>
-              <option value="ADMIN">Admin</option>
-            </select>
-          </div>
 
           <button
             type="submit" disabled={loading}

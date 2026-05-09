@@ -20844,3 +20844,37 @@ Caused by: java.lang.StackOverflowError: null
 2026-05-09T19:34:31.258+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-10] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin@ism.edu.lk
 2026-05-09T19:34:31.258+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.AuthService        : Sign-in attempt for email: admin@ism.edu.lk
 2026-05-09T19:34:31.364+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T19:53:56.152+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-5] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin1@foodorder.com
+2026-05-09T19:53:56.155+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.AuthService        : Sign-in attempt for email: admin1@foodorder.com
+2026-05-09T19:53:56.232+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T19:54:01.514+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-4] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin@ism.edu.lk
+2026-05-09T19:54:01.515+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.AuthService        : Sign-in attempt for email: admin@ism.edu.lk
+2026-05-09T19:54:01.597+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T19:54:02.514+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-7] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin@ism.edu.lk
+2026-05-09T19:54:02.514+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.AuthService        : Sign-in attempt for email: admin@ism.edu.lk
+2026-05-09T19:54:02.575+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T19:54:03.281+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-1] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin@ism.edu.lk
+2026-05-09T19:54:03.281+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.AuthService        : Sign-in attempt for email: admin@ism.edu.lk
+2026-05-09T19:54:03.362+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T19:54:03.982+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-6] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin@ism.edu.lk
+2026-05-09T19:54:03.982+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.AuthService        : Sign-in attempt for email: admin@ism.edu.lk
+2026-05-09T19:54:04.069+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T19:54:04.690+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-9] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin@ism.edu.lk
+2026-05-09T19:54:04.691+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-9] com.foodorder.service.AuthService        : Sign-in attempt for email: admin@ism.edu.lk
+2026-05-09T19:54:04.778+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T19:54:05.374+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-3] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin@ism.edu.lk
+2026-05-09T19:54:05.374+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.AuthService        : Sign-in attempt for email: admin@ism.edu.lk
+2026-05-09T19:54:05.435+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T19:54:25.470+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-8] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin@ism.edu.lk
+2026-05-09T19:54:25.471+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.AuthService        : Sign-in attempt for email: admin@ism.edu.lk
+2026-05-09T19:54:25.552+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T19:54:41.353+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-2] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin1@foodorder.com
+2026-05-09T19:54:41.353+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.AuthService        : Sign-in attempt for email: admin1@foodorder.com
+2026-05-09T19:54:41.434+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T20:04:14.406+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-10] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin1@foodorder.com
+2026-05-09T20:04:14.406+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.AuthService        : Sign-in attempt for email: admin1@foodorder.com
+2026-05-09T20:04:14.483+05:30  WARN 2436 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-09T20:12:10.659+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-6] c.foodorder.controller.AuthController    : POST /api/auth/signup - email: testreg@example.com
+2026-05-09T20:12:10.659+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.AuthService        : Registering new user with email: testreg@example.com
+2026-05-09T20:12:10.741+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.AuthService        : Created cart for user: testreg@example.com
+2026-05-09T20:12:10.741+05:30  INFO 2436 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.AuthService        : User registered successfully: testreg@example.com
