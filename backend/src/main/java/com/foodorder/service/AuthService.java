@@ -1,6 +1,7 @@
 package com.foodorder.service;
 
 import com.foodorder.dto.AuthResponse;
+import com.foodorder.dto.CurrentUserResponse;
 import com.foodorder.dto.SignInRequest;
 import com.foodorder.dto.SignUpRequest;
 import com.foodorder.entity.Cart;
@@ -8,6 +9,7 @@ import com.foodorder.entity.User;
 import com.foodorder.enums.Role;
 import com.foodorder.exception.BusinessException;
 import com.foodorder.exception.DuplicateResourceException;
+import com.foodorder.exception.ResourceNotFoundException;
 import com.foodorder.repository.CartRepository;
 import com.foodorder.repository.UserRepository;
 import com.foodorder.security.JwtUtils;
@@ -108,6 +110,21 @@ public class AuthService {
 
         log.info("User signed in successfully: {}", user.getEmail());
         return buildAuthResponse(token, user);
+    }
+
+    /**
+     * Returns the currently authenticated user profile.
+     */
+    public CurrentUserResponse getCurrentUser(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found: " + email));
+
+        return CurrentUserResponse.builder()
+                .userId(user.getId())
+                .name(user.getName())
+                .email(user.getEmail())
+                .role(user.getRole() != null ? user.getRole().name() : null)
+                .build();
     }
 
     private AuthResponse buildAuthResponse(String token, User user) {

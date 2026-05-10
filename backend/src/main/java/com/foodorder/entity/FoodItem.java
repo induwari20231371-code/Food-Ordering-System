@@ -3,7 +3,7 @@ package com.foodorder.entity;
 import com.foodorder.enums.FoodItemStatus;
 import jakarta.persistence.*;
 import lombok.*;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -33,7 +33,7 @@ public class FoodItem {
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
 
-    @Column(name = "image_url")
+    @Column(name = "image_url", length = 2000, columnDefinition = "VARCHAR(2000)")
     private String imageUrl;
 
     @Enumerated(EnumType.STRING)
@@ -45,7 +45,7 @@ public class FoodItem {
     @JoinColumn(name = "category_id", nullable = false)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JsonBackReference
+    @JsonIgnore
     private Category category;
 
     @Column(name = "created_at")

@@ -65,7 +65,7 @@ public class FoodItemService {
                 .name(request.getName())
                 .description(request.getDescription())
                 .price(request.getPrice())
-                .imageUrl(request.getImageUrl())
+                .imageUrl(normalizeImageUrl(request.getImageUrl()))
                 .status(request.getStatus() != null ? request.getStatus() : FoodItemStatus.AVAILABLE)
                 .category(category)
                 .build();
@@ -84,8 +84,8 @@ public class FoodItemService {
         foodItem.setName(request.getName());
         foodItem.setDescription(request.getDescription());
         foodItem.setPrice(request.getPrice());
-        foodItem.setImageUrl(request.getImageUrl());
-        foodItem.setStatus(request.getStatus());
+        foodItem.setImageUrl(normalizeImageUrl(request.getImageUrl()));
+        foodItem.setStatus(request.getStatus() != null ? request.getStatus() : FoodItemStatus.AVAILABLE);
         foodItem.setCategory(category);
 
         return mapToResponse(foodItemRepository.save(foodItem));
@@ -116,5 +116,18 @@ public class FoodItemService {
         response.setCategoryName(item.getCategory().getName());
         response.setCreatedAt(item.getCreatedAt());
         return response;
+    }
+
+    private String normalizeImageUrl(String imageUrl) {
+        if (imageUrl == null) {
+            return null;
+        }
+
+        String trimmed = imageUrl.trim();
+        if (trimmed.isEmpty()) {
+            return null;
+        }
+
+        return trimmed.length() > 2000 ? trimmed.substring(0, 2000) : trimmed;
     }
 }

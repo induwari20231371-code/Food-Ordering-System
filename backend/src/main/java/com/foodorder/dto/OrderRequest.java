@@ -15,4 +15,10 @@ public class OrderRequest {
     private String specialInstructions;
 
     private String paymentMethod = "CASH_ON_DELIVERY";
+
+    // Optional card details for CARD payments (simulated)
+    private String cardNumber;
+    private String cardHolder;
+    private String cardExpiry;
+    private String cardCvv;
 }
