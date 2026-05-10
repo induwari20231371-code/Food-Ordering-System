@@ -9,7 +9,10 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-1">
-            <h2 className="text-white text-2xl font-bold mb-3">🍔 FoodOrder</h2>
+            <div className="flex items-center gap-2 mb-3">
+              <img src="/images/quickbite-logo.png" alt="Quick Bite" className="h-8 w-8 object-contain" />
+              <h2 className="text-white text-2xl font-bold">Quick Bite</h2>
+            </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Fresh food delivered fast. Order your favourite meals from the comfort of your home.
             </p>
@@ -57,7 +60,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500">
-          <p>© 2024 FoodOrder. All rights reserved.</p>
+          <p>© 2024 Quick Bite. All rights reserved.</p>
           <p>CMJD Assignment — Batch 112/113 | IJSE</p>
         </div>
       </div>

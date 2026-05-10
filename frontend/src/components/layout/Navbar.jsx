@@ -17,7 +17,10 @@ export default function Navbar() {
       <div className="w-full px-3 sm:px-6 py-3 flex items-center justify-between">
 
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold tracking-tight">🍔 FoodOrder</Link>
+        <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <img src="/images/quickbite-logo.png" alt="Quick Bite" className="h-10 w-10 object-contain" />
+          <span className="text-2xl font-bold tracking-tight hidden sm:inline">Quick Bite</span>
+        </Link>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
