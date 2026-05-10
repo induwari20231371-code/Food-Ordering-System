@@ -11,8 +11,28 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const savedUser  = localStorage.getItem('user')
     const savedToken = localStorage.getItem('token')
-    if (savedUser && savedToken) setUser(JSON.parse(savedUser))
-    setLoading(false)
+
+    const bootstrapAuth = async () => {
+      if (!savedUser || !savedToken) {
+        setLoading(false)
+        return
+      }
+
+      try {
+        const res = await authAPI.getMe()
+        const currentUser = res.data.data
+        localStorage.setItem('user', JSON.stringify(currentUser))
+        setUser(currentUser)
+      } catch {
+        localStorage.removeItem('token')
+        localStorage.removeItem('user')
+        setUser(null)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    bootstrapAuth()
   }, [])
 
   const signUp = async (data) => {

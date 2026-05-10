@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { foodAPI, categoryAPI, orderAPI, userAPI } from '../api/services'
 import toast from 'react-hot-toast'
 
@@ -11,6 +11,8 @@ function FoodItemsTab() {
   const [form, setForm] = useState({ name:'', description:'', price:'', imageUrl:'', status:'AVAILABLE', categoryId:'' })
   const [editId, setEditId] = useState(null)
   const [loading, setLoading] = useState(true)
+  const formRef = useRef(null)
+  const DEFAULT_IMAGE_URL = null
 
   const fetchAll = async () => {
     try {
@@ -27,10 +29,35 @@ function FoodItemsTab() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      if (editId) { await foodAPI.update(editId, form); toast.success('Updated!') }
-      else        { await foodAPI.create(form);          toast.success('Created!') }
-      setForm({ name:'', description:'', price:'', imageUrl:'', status:'AVAILABLE', categoryId:'' })
-      setEditId(null); fetchAll()
+      const payload = {
+        ...form,
+        imageUrl: normalizeImageUrl(form.imageUrl),
+        price: parseFloat(form.price),
+        categoryId: form.categoryId === '' ? null : (isNaN(Number(form.categoryId)) ? form.categoryId : Number(form.categoryId)),
+      }
+
+      if (editId) {
+        await foodAPI.update(editId, payload);
+        toast.success('Updated!')
+        await fetchAll()
+      } else {
+        const res = await foodAPI.create(payload)
+        const created = res?.data?.data
+        toast.success('Created!')
+        // set form to created item so it can be edited immediately
+        if (created) {
+          setEditId(created.id)
+          setForm({
+            name: created.name || '',
+            description: created.description || '',
+            price: created.price != null ? String(created.price) : '',
+            imageUrl: created.imageUrl || '',
+            status: created.status || 'AVAILABLE',
+            categoryId: created.categoryId != null ? String(created.categoryId) : ''
+          })
+        }
+        await fetchAll()
+      }
     } catch (err) { toast.error(err.response?.data?.message || 'Error') }
   }
 
@@ -39,12 +66,19 @@ function FoodItemsTab() {
     setForm({
       name: item.name || '',
       description: item.description || '',
-      price: item.price ?? '',
+      price: item.price != null ? String(item.price) : '',
       imageUrl: item.imageUrl || '',
       status: item.status || 'AVAILABLE',
-      categoryId: item.categoryId ?? item.category?.id ?? ''
+      categoryId: item.categoryId != null ? String(item.categoryId) : (item.category?.id != null ? String(item.category.id) : '')
     })
   }
+
+  useEffect(() => {
+    if (!editId) return
+    window.requestAnimationFrame(() => {
+      formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }, [editId])
 
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this food item?')) return
@@ -52,10 +86,18 @@ function FoodItemsTab() {
     catch (err) { toast.error(err.response?.data?.message || 'Error') }
   }
 
+  const normalizeImageUrl = (value) => {
+    if (!value) return DEFAULT_IMAGE_URL
+    const trimmed = value.trim()
+    if (!trimmed) return DEFAULT_IMAGE_URL
+    if (trimmed.length > 255) return DEFAULT_IMAGE_URL
+    return trimmed
+  }
+
   return (
     <div className="space-y-6">
       {/* Form */}
-      <div className="bg-white rounded-2xl shadow-sm p-6">
+      <div ref={formRef} className="bg-white rounded-2xl shadow-sm p-6 scroll-mt-24">
         <h3 className="font-bold text-gray-800 mb-4">{editId ? 'Edit Food Item' : 'Add New Food Item'}</h3>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[

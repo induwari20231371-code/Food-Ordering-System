@@ -136,7 +136,7 @@ export default function MenuPage() {
   const [loading,    setLoading]    = useState(true)
 
   useEffect(() => {
-    foodAPI.getAvailable()
+    foodAPI.getAll()
       .then((foodRes) => {
         console.log('Food API Response:', foodRes)
         const foodData = Array.isArray(foodRes.data.data) ? foodRes.data.data : []

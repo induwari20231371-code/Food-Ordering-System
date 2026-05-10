@@ -4,6 +4,7 @@ import api from './axiosClient'
 export const authAPI = {
   signUp: (data) => api.post('/auth/signup', data),
   signIn: (data) => api.post('/auth/signin', data),
+  getMe: () => api.get('/auth/me'),
 }
 
 // CATEGORIES

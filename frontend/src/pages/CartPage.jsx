@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useCart } from '../context/CartContext'
-import { orderAPI } from '../api/services'
+import { orderAPI, paymentAPI } from '../api/services'
 import { useNavigate, Link } from 'react-router-dom'
 import { FiTrash2, FiPlus, FiMinus, FiShoppingBag } from 'react-icons/fi'
 import toast from 'react-hot-toast'
@@ -13,6 +13,11 @@ export default function CartPage() {
   const [notes,    setNotes]    = useState('')
   const [method,   setMethod]   = useState('CASH_ON_DELIVERY')
   const [placing,  setPlacing]  = useState(false)
+  // Card details (only shown when method === 'CARD')
+  const [cardNumber, setCardNumber] = useState('')
+  const [cardHolder, setCardHolder] = useState('')
+  const [cardExpiry, setCardExpiry] = useState('')
+  const [cardCvv,    setCardCvv]    = useState('')
 
   const items = cart?.cartItems ?? []
 
@@ -23,9 +28,27 @@ export default function CartPage() {
 
   const handlePlaceOrder = async () => {
     if (!address.trim()) { toast.error('Please enter a delivery address'); return }
+    if (method === 'CARD') {
+      if (!cardNumber.trim() || !cardHolder.trim() || !cardExpiry.trim() || !cardCvv.trim()) {
+        toast.error('Please enter your card details'); return
+      }
+    }
     setPlacing(true)
     try {
-      await orderAPI.placeOrder({ deliveryAddress: address, specialInstructions: notes, paymentMethod: method })
+      const res = await orderAPI.placeOrder({ deliveryAddress: address, specialInstructions: notes, paymentMethod: method,
+        cardNumber: cardNumber || undefined,
+        cardHolder: cardHolder || undefined,
+        cardExpiry: cardExpiry || undefined,
+        cardCvv: cardCvv || undefined
+      })
+
+      const orderId = res?.data?.data?.id
+      // If payment by card, trigger simulated processing
+      if (method === 'CARD' && orderId) {
+        await paymentAPI.process(orderId)
+        toast.success('Payment processed ✅')
+      }
+
       clearCart()
       toast.success('Order placed! 🎉')
       navigate('/orders')
@@ -115,6 +138,31 @@ export default function CartPage() {
                   <option value="UPI">Digital Wallet</option>
                 </select>
               </div>
+
+              {method === 'CARD' && (
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                  <input value={cardNumber} onChange={e => setCardNumber(e.target.value)} placeholder="1234 5678 9012 3456"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" />
+
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Card Holder</label>
+                  <input value={cardHolder} onChange={e => setCardHolder(e.target.value)} placeholder="Full name on card"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" />
+
+                  <div className="flex gap-2">
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Expiry (MM/YY)</label>
+                      <input value={cardExpiry} onChange={e => setCardExpiry(e.target.value)} placeholder="MM/YY"
+                        className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" />
+                    </div>
+                    <div className="w-28">
+                      <label className="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                      <input value={cardCvv} onChange={e => setCardCvv(e.target.value)} placeholder="123"
+                        className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" />
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Special Instructions</label>
