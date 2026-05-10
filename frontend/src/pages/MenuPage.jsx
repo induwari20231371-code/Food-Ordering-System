@@ -77,7 +77,7 @@ function getFoodImageUrl(item) {
 function FoodCard({ item }) {
   const { addItem }           = useCart()
   const { isLoggedIn, isAdmin } = useAuth()
-  const isAvailable = item.status === 'AVAILABLE'
+  const isAvailable = String(item.status || '').toUpperCase() === 'AVAILABLE'
   const imageUrl = getFoodImageUrl(item)
 
   return (
