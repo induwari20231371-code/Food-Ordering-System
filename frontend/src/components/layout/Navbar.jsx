@@ -18,7 +18,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <img src="/images/quickbite-logo.png" alt="Quick Bite" className="h-10 w-10 object-contain" />
+          <img src="/images/quickbite-logo.png" alt="Quick Bite" className="h-14 w-14 sm:h-16 sm:w-16 object-contain" />
           <span className="text-2xl font-bold tracking-tight hidden sm:inline">Quick Bite</span>
         </Link>
 

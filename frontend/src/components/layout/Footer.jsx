@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <img src="/images/quickbite-logo.png" alt="Quick Bite" className="h-8 w-8 object-contain" />
+              <img src="/images/quickbite-logo.png" alt="Quick Bite" className="h-12 w-12 sm:h-14 sm:w-14 object-contain" />
               <h2 className="text-white text-2xl font-bold">Quick Bite</h2>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">

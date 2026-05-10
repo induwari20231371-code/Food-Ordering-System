@@ -8,6 +8,9 @@ export default function HomePage() {
     <div className="min-h-screen bg-orange-50">
       {/* Hero */}
       <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white py-24 px-4 text-center">
+        <div className="flex justify-center mb-6">
+          <img src="/images/quickbite-logo.png" alt="Quick Bite" className="h-40 w-40 sm:h-48 sm:w-48 object-contain drop-shadow-2xl" />
+        </div>
         <h1 className="text-5xl font-bold mb-4">Delicious Food,<br/>Delivered Fast 🍕</h1>
         <p className="text-orange-100 text-lg mb-10 max-w-xl mx-auto">
           Order from your favourite restaurants. Fresh, hot, and delivered right to your door.
