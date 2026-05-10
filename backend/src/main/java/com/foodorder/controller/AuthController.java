@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
@@ -58,6 +59,9 @@ public class AuthController {
     @GetMapping("/me")
     public ResponseEntity<ApiResponse<CurrentUserResponse>> getCurrentUser(
             Authentication authentication) {
+        if (authentication == null) {
+            throw new BadCredentialsException("Authentication required");
+        }
         return ResponseEntity.ok(ApiResponse.success(authService.getCurrentUser(authentication.getName())));
     }
 }

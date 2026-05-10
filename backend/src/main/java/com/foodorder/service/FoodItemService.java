@@ -5,7 +5,10 @@ import com.foodorder.dto.FoodItemResponse;
 import com.foodorder.entity.Category;
 import com.foodorder.entity.FoodItem;
 import com.foodorder.enums.FoodItemStatus;
+import com.foodorder.exception.BusinessException;
 import com.foodorder.exception.ResourceNotFoundException;
+import com.foodorder.repository.CartItemRepository;
+import com.foodorder.repository.OrderItemRepository;
 import com.foodorder.repository.CategoryRepository;
 import com.foodorder.repository.FoodItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +33,8 @@ public class FoodItemService {
 
     private final FoodItemRepository foodItemRepository;
     private final CategoryRepository categoryRepository;
+    private final CartItemRepository cartItemRepository;
+    private final OrderItemRepository orderItemRepository;
 
     public List<FoodItemResponse> getAllFoodItems() {
         return deduplicateFoodItems(foodItemRepository.findAll().stream()
@@ -98,9 +103,18 @@ public class FoodItemService {
     @Transactional
     public void deleteFoodItem(Long id) {
         log.info("Deleting food item id: {}", id);
-        FoodItem foodItem = findById(id);
-        foodItem.setStatus(FoodItemStatus.OUT_OF_STOCK);
-        foodItemRepository.save(foodItem);
+        // ensure it exists
+        findById(id);
+
+        long cartRefs = cartItemRepository.countByFoodItemId(id);
+        long orderRefs = orderItemRepository.countByFoodItemId(id);
+
+        if (cartRefs > 0 || orderRefs > 0) {
+            throw new BusinessException("Cannot delete food item: referenced by existing orders or carts");
+        }
+
+        foodItemRepository.deleteById(id);
+        foodItemRepository.flush();
     }
 
     public FoodItem findById(Long id) {
