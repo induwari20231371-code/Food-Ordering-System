@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { foodAPI, categoryAPI, orderAPI, userAPI } from '../api/services'
 import toast from 'react-hot-toast'
 
@@ -6,12 +6,12 @@ const TABS = ['Food Items', 'Categories', 'Orders', 'Users']
 
 // ─── Food Items Tab ───────────────────────────────────────────
 function FoodItemsTab() {
-  const [items,      setItems]      = useState([])
-  const [categories, setCategories] = useState([])
+  const [items,      setItems]      = useState<any[]>([])
+  const [categories, setCategories] = useState<any[]>([])
   const [form, setForm] = useState({ name:'', description:'', price:'', imageUrl:'', status:'AVAILABLE', categoryId:'' })
-  const [editId, setEditId] = useState(null)
+  const [editId, setEditId] = useState<any>(null)
   const [loading, setLoading] = useState(true)
-  const formRef = useRef(null)
+  const formRef = useRef<any>(null)
   const DEFAULT_IMAGE_URL = null
 
   const fetchAll = async () => {
@@ -26,7 +26,7 @@ function FoodItemsTab() {
   }
   useEffect(() => { fetchAll() }, [])
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault()
     try {
       const payload = {
@@ -58,10 +58,10 @@ function FoodItemsTab() {
         }
         await fetchAll()
       }
-    } catch (err) { toast.error(err.response?.data?.message || 'Error') }
+    } catch (err: any) { toast.error(err.response?.data?.message || 'Error') }
   }
 
-  const handleEdit = (item) => {
+  const handleEdit = (item: any) => {
     setEditId(item.id)
     setForm({
       name: item.name || '',
@@ -80,13 +80,13 @@ function FoodItemsTab() {
     })
   }, [editId])
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: any) => {
     if (!window.confirm('Delete this food item?')) return
     try { await foodAPI.delete(id); toast.success('Deleted'); fetchAll() }
-    catch (err) { toast.error(err.response?.data?.message || 'Error') }
+    catch (err: any) { toast.error(err.response?.data?.message || 'Error') }
   }
 
-  const normalizeImageUrl = (value) => {
+  const normalizeImageUrl = (value: any) => {
     if (!value) return DEFAULT_IMAGE_URL
     const trimmed = value.trim()
     if (!trimmed) return DEFAULT_IMAGE_URL
@@ -108,7 +108,7 @@ function FoodItemsTab() {
           ].map(({ label, name, type, placeholder }) => (
             <div key={name}>
               <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
-              <input type={type} value={form[name]} onChange={e => setForm({...form,[name]:e.target.value})}
+              <input type={type} value={form[name as keyof typeof form]} onChange={e => setForm({...form,[name]:e.target.value})}
                 placeholder={placeholder} required={name==='name'||name==='price'}
                 className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" />
             </div>
@@ -151,7 +151,7 @@ function FoodItemsTab() {
               <tr key={item.id} className="hover:bg-gray-50">
                 <td className="px-4 py-3 font-medium text-gray-800">{item.name}</td>
                 <td className="px-4 py-3 text-gray-500">{item.categoryName}</td>
-                <td className="px-4 py-3 text-orange-500 font-medium">LKR {parseFloat(item.price).toFixed(2)}</td>
+                <td className="px-4 py-3 text-orange-500 font-medium">LKR {parseFloat(String(item.price)).toFixed(2)}</td>
                 <td className="px-4 py-3">
                   <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${item.status==='AVAILABLE'?'bg-green-100 text-green-700':'bg-red-100 text-red-500'}`}>
                     {item.status}
@@ -172,9 +172,9 @@ function FoodItemsTab() {
 
 // ─── Categories Tab ───────────────────────────────────────────
 function CategoriesTab() {
-  const [cats,    setCats]    = useState([])
+  const [cats,    setCats]    = useState<any[]>([])
   const [form,    setForm]    = useState({ name:'', description:'' })
-  const [editId,  setEditId]  = useState(null)
+  const [editId,  setEditId]  = useState<any>(null)
 
   const fetchAll = async () => {
     try {
@@ -187,19 +187,19 @@ function CategoriesTab() {
   }
   useEffect(() => { fetchAll() }, [])
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault()
     try {
       if (editId) { await categoryAPI.update(editId, form); toast.success('Updated!') }
       else        { await categoryAPI.create(form);          toast.success('Created!') }
       setForm({ name:'', description:'' }); setEditId(null); fetchAll()
-    } catch (err) { toast.error(err.response?.data?.message || 'Error') }
+    } catch (err: any) { toast.error(err.response?.data?.message || 'Error') }
   }
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: any) => {
     if (!window.confirm('Delete this category?')) return
     try { await categoryAPI.delete(id); toast.success('Deleted'); fetchAll() }
-    catch (err) { toast.error(err.response?.data?.message || 'Error') }
+    catch (err: any) { toast.error(err.response?.data?.message || 'Error') }
   }
 
   return (
@@ -247,7 +247,7 @@ function CategoriesTab() {
 
 // ─── Orders Tab ───────────────────────────────────────────────
 function OrdersTab() {
-  const [orders,  setOrders]  = useState([])
+  const [orders,  setOrders]  = useState<any[]>([])
   const [loading, setLoading] = useState(true)
 
   const fetchAll = async () => {
@@ -261,12 +261,12 @@ function OrdersTab() {
   }
   useEffect(() => { fetchAll() }, [])
 
-  const handleStatus = async (id, status) => {
+  const handleStatus = async (id: any, status: any) => {
     try { await orderAPI.updateStatus(id, status); toast.success('Status updated'); fetchAll() }
-    catch (err) { toast.error(err.response?.data?.message || 'Error') }
+    catch (err: any) { toast.error(err.response?.data?.message || 'Error') }
   }
 
-  const STATUS_COLORS = { PLACED:'bg-blue-100 text-blue-700', PREPARING:'bg-yellow-100 text-yellow-700', DELIVERED:'bg-green-100 text-green-700', CANCELLED:'bg-red-100 text-red-500' }
+  const STATUS_COLORS: Record<string, string> = { PLACED:'bg-blue-100 text-blue-700', PREPARING:'bg-yellow-100 text-yellow-700', DELIVERED:'bg-green-100 text-green-700', CANCELLED:'bg-red-100 text-red-500' }
 
   return (
     <div className="bg-white rounded-2xl shadow-sm overflow-x-auto">
@@ -280,7 +280,7 @@ function OrdersTab() {
             <tr key={order.id} className="hover:bg-gray-50">
               <td className="px-4 py-3 font-medium">#{order.id}</td>
               <td className="px-4 py-3 text-gray-500">{order.userId}</td>
-              <td className="px-4 py-3 text-orange-500 font-medium">LKR {parseFloat(order.totalAmount).toFixed(2)}</td>
+              <td className="px-4 py-3 text-orange-500 font-medium">LKR {parseFloat(String(order.totalAmount)).toFixed(2)}</td>
               <td className="px-4 py-3">
                 <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${STATUS_COLORS[order.status]||'bg-gray-100'}`}>{order.status}</span>
               </td>
@@ -306,7 +306,7 @@ function OrdersTab() {
 
 // ─── Users Tab ───────────────────────────────────────────────
 function UsersTab() {
-  const [users,   setUsers]   = useState([])
+  const [users,   setUsers]   = useState<any[]>([])
   const [loading, setLoading] = useState(true)
 
   const fetchAll = async () => {
@@ -320,10 +320,10 @@ function UsersTab() {
   }
   useEffect(() => { fetchAll() }, [])
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: any) => {
     if (!window.confirm('Delete this user?')) return
     try { await userAPI.delete(id); toast.success('User deleted'); fetchAll() }
-    catch (err) { toast.error(err.response?.data?.message || 'Error') }
+    catch (err: any) { toast.error(err.response?.data?.message || 'Error') }
   }
 
   return (

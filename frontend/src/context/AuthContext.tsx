@@ -1,11 +1,30 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import { authAPI } from '../api/services'
 import toast from 'react-hot-toast'
 
-const AuthContext = createContext(null)
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  role: 'CUSTOMER' | 'ADMIN';
+  [key: string]: any;
+}
 
-export function AuthProvider({ children }) {
-  const [user, setUser]       = useState(null)
+interface AuthContextType {
+  user: User | null;
+  loading: boolean;
+  isLoggedIn: boolean;
+  isAdmin: boolean;
+  signUp: (data: any) => Promise<User>;
+  signIn: (data: any) => Promise<User>;
+  signOut: () => void;
+}
+
+const AuthContext = createContext<AuthContextType | null>(null)
+
+export function AuthProvider({ children }: { children: ReactNode }) {
+  const [user, setUser]       = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -35,7 +54,7 @@ export function AuthProvider({ children }) {
     bootstrapAuth()
   }, [])
 
-  const signUp = async (data) => {
+  const signUp = async (data: any) => {
     const res = await authAPI.signUp(data)
     const { token, ...userData } = res.data.data
     localStorage.setItem('token', token)
@@ -45,7 +64,7 @@ export function AuthProvider({ children }) {
     return userData
   }
 
-  const signIn = async (data) => {
+  const signIn = async (data: any) => {
     const res = await authAPI.signIn(data)
     const { token, ...userData } = res.data.data
     localStorage.setItem('token', token)
@@ -74,4 +93,10 @@ export function AuthProvider({ children }) {
   )
 }
 
-export const useAuth = () => useContext(AuthContext)
+export const useAuth = () => {
+  const context = useContext(AuthContext)
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider')
+  }
+  return context
+}

@@ -1,3 +1,4 @@
+import React, { ReactNode } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { AuthProvider, useAuth } from './context/AuthContext'
@@ -14,14 +15,14 @@ import OrdersPage  from './pages/OrdersPage'
 import AdminPage   from './pages/AdminPage'
 
 // Protect routes that need login
-function PrivateRoute({ children }) {
+function PrivateRoute({ children }: { children: ReactNode }) {
   const { isLoggedIn, loading } = useAuth()
   if (loading) return <div className="min-h-screen flex items-center justify-center text-gray-400">Loading...</div>
   return isLoggedIn ? children : <Navigate to="/login" />
 }
 
 // Protect routes that need ADMIN role
-function AdminRoute({ children }) {
+function AdminRoute({ children }: { children: ReactNode }) {
   const { isLoggedIn, isAdmin, loading } = useAuth()
   if (loading) return <div className="min-h-screen flex items-center justify-center text-gray-400">Loading...</div>
   if (!isLoggedIn) return <Navigate to="/login" />

@@ -1,19 +1,51 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react'
+import React, { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react'
 import { cartAPI } from '../api/services'
 import { useAuth } from './AuthContext'
 import toast from 'react-hot-toast'
 
-const CartContext = createContext(null)
+export interface CartItem {
+  id: string;
+  quantity: number;
+  foodItem: {
+    id: string;
+    name: string;
+    price: number;
+  };
+  subtotal: number;
+}
 
-export function CartProvider({ children }) {
+export interface Cart {
+  id: string;
+  userId: string;
+  cartItems: CartItem[];
+  totalAmount: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface CartContextType {
+  cart: Cart | null;
+  loading: boolean;
+  fetchCart: () => Promise<void>;
+  addItem: (foodItemId: string, quantity?: number) => Promise<void>;
+  updateItem: (cartItemId: string, quantity: number) => Promise<void>;
+  removeItem: (cartItemId: string) => Promise<void>;
+  clearCart: () => Promise<void>;
+  itemCount: number;
+  totalAmount: number;
+}
+
+const CartContext = createContext<CartContextType | null>(null)
+
+export function CartProvider({ children }: { children: ReactNode }) {
   const { isLoggedIn, isAdmin } = useAuth()
-  const [cart, setCart]         = useState(null)
+  const [cart, setCart]         = useState<Cart | null>(null)
   const [loading, setLoading]   = useState(false)
 
   // Normalize backend cart response to frontend shape
-  const normalizeCart = (serverCart) => {
+  const normalizeCart = (serverCart: any): Cart | null => {
     if (!serverCart) return null
-    const normalizedItems = (serverCart.items || []).map(i => ({
+    const normalizedItems: CartItem[] = (serverCart.items || []).map((i: any) => ({
       id: i.id,
       quantity: i.quantity,
       foodItem: {
@@ -49,17 +81,17 @@ export function CartProvider({ children }) {
 
   useEffect(() => { fetchCart() }, [fetchCart])
 
-  const addItem = async (foodItemId, quantity = 1) => {
+  const addItem = async (foodItemId: string, quantity = 1) => {
     try {
       const res = await cartAPI.addItem({ foodItemId, quantity })
       setCart(normalizeCart(res.data.data))
       toast.success('Added to cart!')
-    } catch (e) {
+    } catch (e: any) {
       toast.error(e.response?.data?.message || 'Failed to add item')
     }
   }
 
-  const updateItem = async (cartItemId, quantity) => {
+  const updateItem = async (cartItemId: string, quantity: number) => {
     try {
       const res = await cartAPI.updateItem(cartItemId, quantity)
       setCart(normalizeCart(res.data.data))
@@ -68,7 +100,7 @@ export function CartProvider({ children }) {
     }
   }
 
-  const removeItem = async (cartItemId) => {
+  const removeItem = async (cartItemId: string) => {
     try {
       const res = await cartAPI.removeItem(cartItemId)
       setCart(normalizeCart(res.data.data))
@@ -104,4 +136,10 @@ export function CartProvider({ children }) {
   )
 }
 
-export const useCart = () => useContext(CartContext)
+export const useCart = () => {
+  const context = useContext(CartContext)
+  if (!context) {
+    throw new Error('useCart must be used within a CartProvider')
+  }
+  return context
+}

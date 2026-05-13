@@ -52,7 +52,7 @@ export default function CartPage() {
       clearCart()
       toast.success('Order placed! 🎉')
       navigate('/orders')
-    } catch (err) {
+    } catch (err: any) {
       toast.error(err.response?.data?.message || 'Failed to place order')
     } finally {
       setPlacing(false)
@@ -82,7 +82,7 @@ export default function CartPage() {
                 <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center text-3xl flex-shrink-0">🍽️</div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-gray-800 truncate">{item.foodItem?.name}</h3>
-                  <p className="text-orange-500 font-bold text-sm">LKR {parseFloat(item.foodItem?.price ?? 0).toFixed(2)}</p>
+                  <p className="text-orange-500 font-bold text-sm">LKR {parseFloat(String(item.foodItem?.price ?? 0)).toFixed(2)}</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <button onClick={() => item.quantity > 1 ? updateItem(item.id, item.quantity - 1) : removeItem(item.id)}
@@ -96,7 +96,7 @@ export default function CartPage() {
                   </button>
                 </div>
                 <span className="font-bold text-gray-700 w-28 text-right text-sm">
-                  LKR {(parseFloat(item.foodItem?.price ?? 0) * item.quantity).toFixed(2)}
+                  LKR {(parseFloat(String(item.foodItem?.price ?? 0)) * item.quantity).toFixed(2)}
                 </span>
                 <button onClick={() => removeItem(item.id)} className="text-red-400 hover:text-red-600">
                   <FiTrash2 size={18} />
@@ -116,10 +116,10 @@ export default function CartPage() {
           <div className="w-full lg:w-80">
             <div className="bg-white rounded-2xl shadow-sm p-6 space-y-4 sticky top-20">
               <h2 className="text-xl font-bold text-gray-800">Order Summary</h2>
-              <div className="flex justify-between text-gray-600 text-sm"><span>Subtotal</span><span>LKR {parseFloat(totalAmount).toFixed(2)}</span></div>
+              <div className="flex justify-between text-gray-600 text-sm"><span>Subtotal</span><span>LKR {parseFloat(String(totalAmount)).toFixed(2)}</span></div>
               <div className="flex justify-between text-gray-600 text-sm"><span>Delivery</span><span className="text-orange-500 font-medium">LKR {deliveryFee.toFixed(2)}</span></div>
               <div className="border-t pt-3 flex justify-between font-bold text-lg">
-                <span>Total</span><span className="text-orange-500">LKR {(parseFloat(totalAmount) + deliveryFee).toFixed(2)}</span>
+                <span>Total</span><span className="text-orange-500">LKR {(parseFloat(String(totalAmount)) + deliveryFee).toFixed(2)}</span>
               </div>
 
               <div>

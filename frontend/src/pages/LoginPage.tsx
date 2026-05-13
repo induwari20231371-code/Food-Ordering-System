@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState, ChangeEvent, FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import toast from 'react-hot-toast'
@@ -9,15 +9,15 @@ export default function LoginPage() {
   const [form, setForm]       = useState({ email: '', password: '' })
   const [loading, setLoading] = useState(false)
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
     try {
       const user = await signIn(form)
       navigate(user.role === 'ADMIN' ? '/admin' : '/')
-    } catch (err) {
+    } catch (err: any) {
       toast.error(err.response?.data?.message || 'Invalid email or password')
     } finally {
       setLoading(false)
