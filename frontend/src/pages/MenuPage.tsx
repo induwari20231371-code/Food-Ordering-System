@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { foodAPI } from '../api/services'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
@@ -123,7 +124,12 @@ function FoodCard({ item }: { item: any }) {
             </button>
           )}
           {!isLoggedIn && isAvailable && (
-            <span className="text-xs text-gray-400">Login to order</span>
+            <Link
+              to="/login"
+              className="text-xs text-orange-500 font-semibold hover:text-orange-600 hover:underline"
+            >
+              Login to order
+            </Link>
           )}
         </div>
       </div>

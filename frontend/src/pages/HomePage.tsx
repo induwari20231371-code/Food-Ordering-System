@@ -23,12 +23,20 @@ export default function HomePage() {
             Browse Menu
           </Link>
           {!isLoggedIn && (
-            <Link
-              to="/register"
-              className="border-2 border-white text-white font-bold px-8 py-3 rounded-full text-lg hover:bg-orange-600 transition-colors"
-            >
-              Sign Up Free
-            </Link>
+            <>
+              <Link
+                to="/login"
+                className="border-2 border-white text-white font-bold px-8 py-3 rounded-full text-lg hover:bg-orange-600 transition-colors"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/register"
+                className="border-2 border-white text-white font-bold px-8 py-3 rounded-full text-lg hover:bg-orange-600 transition-colors"
+              >
+                Sign Up Free
+              </Link>
+            </>
           )}
           {isLoggedIn && !isAdmin && (
             <Link

@@ -2,6 +2,7 @@ package com.foodorder.controller;
 
 import com.foodorder.dto.ApiResponse;
 import com.foodorder.dto.OrderRequest;
+import com.foodorder.entity.FoodItem;
 import com.foodorder.entity.Order;
 import com.foodorder.entity.OrderItem;
 import com.foodorder.entity.Payment;
@@ -139,10 +140,15 @@ public class OrderController {
 	}
 
 	private OrderItemResponse toResponse(OrderItem orderItem) {
+		FoodItem fi = orderItem.getFoodItem();
+		Long foodItemId = fi != null ? fi.getId() : null;
+		String foodItemName = fi != null ? fi.getName()
+				: (orderItem.getFoodItemName() != null && !orderItem.getFoodItemName().isBlank()
+					? orderItem.getFoodItemName() : "Removed item");
 		return new OrderItemResponse(
 				orderItem.getId(),
-				orderItem.getFoodItem().getId(),
-				orderItem.getFoodItem().getName(),
+				foodItemId,
+				foodItemName,
 				orderItem.getQuantity(),
 				orderItem.getUnitPrice(),
 				orderItem.getUnitPrice().multiply(BigDecimal.valueOf(orderItem.getQuantity()))

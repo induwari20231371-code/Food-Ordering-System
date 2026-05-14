@@ -58,6 +58,7 @@ public class OrderService {
         List<OrderItem> orderItems = cart.getCartItems().stream().map(cartItem -> OrderItem.builder()
                 .order(order)
                 .foodItem(cartItem.getFoodItem())
+                .foodItemName(cartItem.getFoodItem().getName())
                 .quantity(cartItem.getQuantity())
                 .unitPrice(cartItem.getFoodItem().getPrice())
                 .build()

@@ -8,8 +8,12 @@ export default function LoginPage() {
   const navigate   = useNavigate()
   const [form, setForm]       = useState({ email: '', password: '' })
   const [loading, setLoading] = useState(false)
+  const [authError, setAuthError] = useState('')
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setAuthError('')
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -18,7 +22,11 @@ export default function LoginPage() {
       const user = await signIn(form)
       navigate(user.role === 'ADMIN' ? '/admin' : '/')
     } catch (err: any) {
-      toast.error(err.response?.data?.message || 'Invalid email or password')
+      const msg =
+        err.response?.data?.message ||
+        (err.code === 'ERR_NETWORK' ? 'Cannot reach server. Is the backend running?' : 'Wrong password or username.')
+      setAuthError(msg)
+      toast.error(msg)
     } finally {
       setLoading(false)
     }
@@ -34,6 +42,11 @@ export default function LoginPage() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
+          {authError && (
+            <div className="rounded-lg bg-red-50 text-red-700 text-sm px-4 py-3 border border-red-100" role="alert">
+              {authError}
+            </div>
+          )}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
             <input

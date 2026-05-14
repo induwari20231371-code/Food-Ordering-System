@@ -28,12 +28,16 @@ public class OrderItem {
     @EqualsAndHashCode.Exclude
     private Order order;
 
-    // Many-to-One: Many order items can reference the same food item
+    // Many-to-One: optional after menu item is removed; name snapshot keeps history readable
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "food_item_id", nullable = false)
+    @JoinColumn(name = "food_item_id")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private FoodItem foodItem;
+
+    /** Snapshot of the food name at order time (required when foodItem is cleared after menu delete). */
+    @Column(name = "food_item_name", length = 255)
+    private String foodItemName;
 
     @Column(nullable = false)
     private Integer quantity;

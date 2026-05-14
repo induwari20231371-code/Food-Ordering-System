@@ -3,11 +3,13 @@ package com.foodorder.service;
 import com.foodorder.dto.FoodItemRequest;
 import com.foodorder.dto.FoodItemResponse;
 import com.foodorder.entity.Category;
+import com.foodorder.entity.Cart;
+import com.foodorder.entity.CartItem;
 import com.foodorder.entity.FoodItem;
 import com.foodorder.enums.FoodItemStatus;
-import com.foodorder.exception.BusinessException;
 import com.foodorder.exception.ResourceNotFoundException;
 import com.foodorder.repository.CartItemRepository;
+import com.foodorder.repository.CartRepository;
 import com.foodorder.repository.OrderItemRepository;
 import com.foodorder.repository.CategoryRepository;
 import com.foodorder.repository.FoodItemRepository;
@@ -16,11 +18,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import jakarta.persistence.EntityManager;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -34,7 +40,9 @@ public class FoodItemService {
     private final FoodItemRepository foodItemRepository;
     private final CategoryRepository categoryRepository;
     private final CartItemRepository cartItemRepository;
+    private final CartRepository cartRepository;
     private final OrderItemRepository orderItemRepository;
+    private final EntityManager entityManager;
 
     public List<FoodItemResponse> getAllFoodItems() {
         return deduplicateFoodItems(foodItemRepository.findAll().stream()
@@ -102,16 +110,28 @@ public class FoodItemService {
 
     @Transactional
     public void deleteFoodItem(Long id) {
-        log.info("Deleting food item id: {}", id);
-        // ensure it exists
+        log.info("Deleting food item id: {} (admin: clearing carts and order FKs)", id);
         findById(id);
 
-        long cartRefs = cartItemRepository.countByFoodItemId(id);
-        long orderRefs = orderItemRepository.countByFoodItemId(id);
+        List<CartItem> cartLines = cartItemRepository.findByFoodItem_Id(id);
+        Set<Long> affectedCartIds = cartLines.stream()
+                .map(ci -> ci.getCart().getId())
+                .collect(Collectors.toCollection(LinkedHashSet::new));
 
-        if (cartRefs > 0 || orderRefs > 0) {
-            throw new BusinessException("Cannot delete food item: referenced by existing orders or carts");
+        cartItemRepository.deleteAllByFoodItemId(id);
+        entityManager.flush();
+
+        for (Long cartId : affectedCartIds) {
+            cartRepository.findById(cartId).ifPresent(cart -> {
+                entityManager.refresh(cart);
+                cart.recalculateTotal();
+                cartRepository.save(cart);
+            });
         }
+
+        orderItemRepository.detachAllLinesFromFoodItem(id);
+        entityManager.flush();
+        entityManager.clear();
 
         foodItemRepository.deleteById(id);
         foodItemRepository.flush();
