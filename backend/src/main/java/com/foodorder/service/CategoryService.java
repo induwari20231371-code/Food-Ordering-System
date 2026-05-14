@@ -2,22 +2,19 @@ package com.foodorder.service;
 
 import com.foodorder.dto.CategoryRequest;
 import com.foodorder.entity.Category;
+import com.foodorder.entity.FoodItem;
+import com.foodorder.enums.FoodItemStatus;
 import com.foodorder.exception.DuplicateResourceException;
 import com.foodorder.exception.ResourceNotFoundException;
 import com.foodorder.repository.CategoryRepository;
+import com.foodorder.repository.FoodItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.foodorder.entity.FoodItem;
-import com.foodorder.enums.FoodItemStatus;
-import com.foodorder.repository.FoodItemRepository;
 
 import java.util.List;
 
-/**
- * Service for category CRUD operations.
- */
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -68,15 +65,18 @@ public class CategoryService {
     public void deleteCategory(Long id) {
         log.info("Deleting category id: {}", id);
         Category category = getCategoryById(id);
-
-        // Soft-delete all food items in this category first
+        
+        // Soft-delete all non-deleted food items in this category
         List<FoodItem> items = foodItemRepository.findByCategoryIdAndDeletedFalse(id);
-        for (FoodItem item : items) {
+        items.forEach(item -> {
             item.setDeleted(true);
             item.setStatus(FoodItemStatus.OUT_OF_STOCK);
-            foodItemRepository.save(item);
+        });
+        if (!items.isEmpty()) {
+            foodItemRepository.saveAll(items);
         }
-
+        
         categoryRepository.delete(category);
-    }   
+        log.info("Category {} deleted successfully", id);
+    }
 }

@@ -47,7 +47,7 @@ public class FoodItem {
 
     // Many-to-One: Many food items belong to one category
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id", nullable = true)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonIgnore

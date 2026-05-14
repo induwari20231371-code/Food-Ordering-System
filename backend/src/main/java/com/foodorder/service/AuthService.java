@@ -33,8 +33,8 @@ import java.util.Set;
 public class AuthService {
 
     public static final Set<String> ALLOWED_ADMIN_EMAILS = Set.of(
-            "admin1@foodorder.com",
-            "admin2@foodorder.com"
+            "admin1@quickbite.com",
+            "admin2@quickbite.com"
     );
 
     private final UserRepository userRepository;
