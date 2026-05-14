@@ -149,9 +149,7 @@ public class FoodItemService {
         }
 
         return uniqueItems.values().stream()
-                .sorted(Comparator.comparing(FoodItemResponse::getCreatedAt,
-                                Comparator.nullsLast(Comparator.naturalOrder()))
-                        .thenComparing(FoodItemResponse::getId, Comparator.nullsLast(Comparator.naturalOrder())))
+                .sorted(Comparator.comparing(FoodItemResponse::getId, Comparator.nullsFirst(Comparator.naturalOrder())))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
