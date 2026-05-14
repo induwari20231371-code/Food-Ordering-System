@@ -721,3 +721,27 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2026-05-14T14:23:55.996+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-9] com.foodorder.service.CategoryService    : Fetching all categories
 2026-05-14T14:29:32.803+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
 2026-05-14T14:29:32.846+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:31:34.689+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:31:34.690+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T14:31:34.691+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:31:34.697+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:31:34.697+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T14:31:34.720+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:31:37.597+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:31:37.635+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:32:02.299+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:32:02.307+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:32:02.396+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:32:02.398+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:32:02.398+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T14:32:02.404+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:32:02.405+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T14:32:02.420+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:33:05.413+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:33:05.423+05:30 DEBUG 24388 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@foodorder.com
+2026-05-14T14:33:54.440+05:30  INFO 24388 --- [food-ordering-system] [http-nio-8080-exec-8] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin1@foodorder.com
+2026-05-14T14:33:54.440+05:30  INFO 24388 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.AuthService        : Sign-in attempt for email: admin1@foodorder.com
+2026-05-14T14:33:54.756+05:30  WARN 24388 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-14T14:34:35.283+05:30  INFO 24388 --- [food-ordering-system] [http-nio-8080-exec-10] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: boka@foodorder.com
+2026-05-14T14:34:35.284+05:30  INFO 24388 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.AuthService        : Sign-in attempt for email: boka@foodorder.com
+2026-05-14T14:34:35.546+05:30  WARN 24388 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
