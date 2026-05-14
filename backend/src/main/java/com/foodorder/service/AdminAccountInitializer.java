@@ -24,14 +24,14 @@ public class AdminAccountInitializer implements CommandLineRunner {
     public void run(String... args) {
         ensureAdmin(
                 "System Admin 1",
-                "admin1@foodorder.com",
+                "admin1@quickbite.com",
                 "Admin@123",
                 "0710000001"
         );
 
         ensureAdmin(
                 "System Admin 2",
-                "admin2@foodorder.com",
+                "admin2@quickbite.com",
                 "Admin@456",
                 "0710000002"
         );

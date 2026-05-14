@@ -3676,3 +3676,231 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or u
 	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:280) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
 	... 137 common frames omitted
 
+2026-05-14T20:12:11.989+05:30  INFO 24452 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : Starting FoodOrderingApplication using Java 21.0.9 with PID 24452 (D:\CMJD\CW3\Food-Ordering-System-main\backend\target\classes started by S.Puleesha induwari in D:\CMJD\CW3\Food-Ordering-System-main\backend)
+2026-05-14T20:12:11.991+05:30 DEBUG 24452 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-05-14T20:12:11.991+05:30  INFO 24452 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T20:12:12.495+05:30  INFO 24452 --- [food-ordering-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T20:12:12.555+05:30  INFO 24452 --- [food-ordering-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 8 JPA repository interfaces.
+2026-05-14T20:12:12.998+05:30  INFO 24452 --- [food-ordering-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-14T20:12:13.011+05:30  INFO 24452 --- [food-ordering-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T20:12:13.012+05:30  INFO 24452 --- [food-ordering-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-05-14T20:12:13.061+05:30  INFO 24452 --- [food-ordering-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-14T20:12:13.061+05:30  INFO 24452 --- [food-ordering-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1036 ms
+2026-05-14T20:12:13.124+05:30 DEBUG 24452 --- [food-ordering-system] [main] c.f.security.JwtAuthenticationFilter     : Filter 'jwtAuthenticationFilter' configured for use
+2026-05-14T20:12:13.207+05:30  INFO 24452 --- [food-ordering-system] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-14T20:12:13.251+05:30  INFO 24452 --- [food-ordering-system] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-14T20:12:13.281+05:30  INFO 24452 --- [food-ordering-system] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-14T20:12:13.437+05:30  INFO 24452 --- [food-ordering-system] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T20:12:13.457+05:30  INFO 24452 --- [food-ordering-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T20:12:13.600+05:30  INFO 24452 --- [food-ordering-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55951fcd
+2026-05-14T20:12:13.601+05:30  INFO 24452 --- [food-ordering-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-14T20:12:13.637+05:30  WARN 24452 --- [food-ordering-system] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-14T20:12:13.637+05:30  WARN 24452 --- [food-ordering-system] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-14T20:12:14.385+05:30  INFO 24452 --- [food-ordering-system] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-14T20:12:14.490+05:30  INFO 24452 --- [food-ordering-system] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-14T20:12:14.833+05:30  INFO 24452 --- [food-ordering-system] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-14T20:12:15.297+05:30  WARN 24452 --- [food-ordering-system] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-14T20:12:15.517+05:30  INFO 24452 --- [food-ordering-system] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@63019596, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6edd80fe, org.springframework.security.web.context.SecurityContextHolderFilter@772db1d8, org.springframework.security.web.header.HeaderWriterFilter@42102827, org.springframework.web.filter.CorsFilter@60eb9c29, org.springframework.security.web.authentication.logout.LogoutFilter@3b6098fd, com.foodorder.security.JwtAuthenticationFilter@7134b8a7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@489e1887, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7421213d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51bba775, org.springframework.security.web.session.SessionManagementFilter@7c1e5d14, org.springframework.security.web.access.ExceptionTranslationFilter@75381b61, org.springframework.security.web.access.intercept.AuthorizationFilter@3397c8c0]
+2026-05-14T20:12:15.756+05:30  INFO 24452 --- [food-ordering-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-14T20:12:15.762+05:30  INFO 24452 --- [food-ordering-system] [main] com.foodorder.FoodOrderingApplication    : Started FoodOrderingApplication in 4.101 seconds (process running for 4.373)
+2026-05-14T20:12:15.994+05:30  INFO 24452 --- [food-ordering-system] [main] c.f.service.AdminAccountInitializer      : Predefined admin account is ready: admin1@quickbite.com
+2026-05-14T20:12:16.088+05:30  INFO 24452 --- [food-ordering-system] [main] c.f.service.AdminAccountInitializer      : Predefined admin account is ready: admin2@quickbite.com
+2026-05-14T20:12:56.888+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-14T20:12:56.888+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-14T20:12:56.888+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-14T20:12:57.111+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:12:57.125+05:30  WARN 24452 --- [food-ordering-system] [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/auth/me' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-05-14T20:12:57.289+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:12:57.334+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:12:57.334+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:12:57.342+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T20:12:57.393+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:12:57.395+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T20:12:57.486+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:14.225+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:14.258+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:14.263+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:14.263+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:14.267+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T20:13:14.288+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:14.288+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T20:13:14.302+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:20.648+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:20.655+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T20:13:20.690+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:20.697+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-14T20:13:23.756+05:30 DEBUG 24452 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin2@foodorder.com
+2026-05-14T20:13:23.829+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Deleting category id: 43
+2026-05-14T20:13:23.968+05:30  WARN 24452 --- [food-ordering-system] [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
+2026-05-14T20:13:23.968+05:30 ERROR 24452 --- [food-ordering-system] [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`food_ordering_db`.`order_items`, CONSTRAINT `FKbmnfj15j0ngros6mbdx7q5c01` FOREIGN KEY (`food_item_id`) REFERENCES `food_items` (`id`))
+2026-05-14T20:13:23.973+05:30 ERROR 24452 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.exception.GlobalExceptionHandler     : Unexpected error occurred: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`food_ordering_db`.`order_items`, CONSTRAINT `FKbmnfj15j0ngros6mbdx7q5c01` FOREIGN KEY (`food_item_id`) REFERENCES `food_items` (`id`))] [delete from food_items where id=?]; SQL [delete from food_items where id=?]; constraint [null]
+
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`food_ordering_db`.`order_items`, CONSTRAINT `FKbmnfj15j0ngros6mbdx7q5c01` FOREIGN KEY (`food_item_id`) REFERENCES `food_items` (`id`))] [delete from food_items where id=?]; SQL [delete from food_items where id=?]; constraint [null]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:290) ~[spring-orm-6.1.1.jar:6.1.1]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.1.1.jar:6.1.1]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:565) ~[spring-orm-6.1.1.jar:6.1.1]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794) ~[spring-tx-6.1.1.jar:6.1.1]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757) ~[spring-tx-6.1.1.jar:6.1.1]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669) ~[spring-tx-6.1.1.jar:6.1.1]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419) ~[spring-tx-6.1.1.jar:6.1.1]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.1.jar:6.1.1]
+	at com.foodorder.service.CategoryService$$SpringCGLIB$$0.deleteCategory(<generated>) ~[classes/:na]
+	at com.foodorder.controller.CategoryController.deleteCategory(CategoryController.java:65) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:198) ~[spring-security-core-6.2.0.jar:6.2.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.1.jar:6.1.1]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.1.jar:6.1.1]
+	at com.foodorder.controller.CategoryController$$SpringCGLIB$$0.deleteCategory(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at com.foodorder.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:68) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`food_ordering_db`.`order_items`, CONSTRAINT `FKbmnfj15j0ngros6mbdx7q5c01` FOREIGN KEY (`food_item_id`) REFERENCES `food_items` (`id`))] [delete from food_items where id=?]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:62) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:283) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:107) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:40) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:52) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.persister.entity.mutation.DeleteCoordinator.doStaticDelete(DeleteCoordinator.java:267) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.persister.entity.mutation.DeleteCoordinator.coordinateDelete(DeleteCoordinator.java:86) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:2971) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:131) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:631) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:498) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1415) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:496) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2325) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1988) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561) ~[spring-orm-6.1.1.jar:6.1.1]
+	... 116 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`food_ordering_db`.`order_items`, CONSTRAINT `FKbmnfj15j0ngros6mbdx7q5c01` FOREIGN KEY (`food_item_id`) REFERENCES `food_items` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.1.0.jar:8.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.1.0.jar:8.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.1.0.jar:8.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.1.0.jar:8.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.1.0.jar:8.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.1.0.jar:8.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.1.0.jar:8.1.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:280) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
+	... 137 common frames omitted
+
+2026-05-14T20:14:18.237+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-8] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin@quickbite.com
+2026-05-14T20:14:18.238+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.AuthService        : Sign-in attempt for email: admin@quickbite.com
+2026-05-14T20:14:18.418+05:30  WARN 24452 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-14T20:14:52.796+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-6] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin2@quickbite.com
+2026-05-14T20:14:52.797+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-6] com.foodorder.service.AuthService        : Sign-in attempt for email: admin2@quickbite.com
+2026-05-14T20:14:52.897+05:30  WARN 24452 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.exception.GlobalExceptionHandler     : Bad credentials attempt
+2026-05-14T20:15:02.405+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-10] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin2@quickbite.com
+2026-05-14T20:15:02.406+05:30  INFO 24452 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.AuthService        : Sign-in attempt for email: admin2@quickbite.com
+2026-05-14T20:15:02.508+05:30 ERROR 24452 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.exception.GlobalExceptionHandler     : Business exception: This admin account is not authorized.
