@@ -40,6 +40,11 @@ public class FoodItem {
     @Column(nullable = false)
     private FoodItemStatus status;
 
+    /** When true, item is hidden from menus and admin lists; row stays for order history FKs. */
+    @Column(nullable = false)
+    @Builder.Default
+    private boolean deleted = false;
+
     // Many-to-One: Many food items belong to one category
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)

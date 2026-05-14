@@ -9,8 +9,13 @@ import java.util.List;
 
 @Repository
 public interface FoodItemRepository extends JpaRepository<FoodItem, Long> {
-    List<FoodItem> findByCategoryId(Long categoryId);
-    List<FoodItem> findByStatus(FoodItemStatus status);
-    List<FoodItem> findByCategoryIdAndStatus(Long categoryId, FoodItemStatus status);
-    List<FoodItem> findByNameContainingIgnoreCase(String name);
+    List<FoodItem> findByDeletedFalse();
+
+    List<FoodItem> findByCategoryIdAndDeletedFalse(Long categoryId);
+
+    List<FoodItem> findByStatusAndDeletedFalse(FoodItemStatus status);
+
+    List<FoodItem> findByCategoryIdAndStatusAndDeletedFalse(Long categoryId, FoodItemStatus status);
+
+    List<FoodItem> findByNameContainingIgnoreCaseAndDeletedFalse(String name);
 }

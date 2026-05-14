@@ -7,10 +7,10 @@ import com.foodorder.entity.Cart;
 import com.foodorder.entity.CartItem;
 import com.foodorder.entity.FoodItem;
 import com.foodorder.enums.FoodItemStatus;
+import com.foodorder.exception.BusinessException;
 import com.foodorder.exception.ResourceNotFoundException;
 import com.foodorder.repository.CartItemRepository;
 import com.foodorder.repository.CartRepository;
-import com.foodorder.repository.OrderItemRepository;
 import com.foodorder.repository.CategoryRepository;
 import com.foodorder.repository.FoodItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -41,33 +41,32 @@ public class FoodItemService {
     private final CategoryRepository categoryRepository;
     private final CartItemRepository cartItemRepository;
     private final CartRepository cartRepository;
-    private final OrderItemRepository orderItemRepository;
     private final EntityManager entityManager;
 
     public List<FoodItemResponse> getAllFoodItems() {
-        return deduplicateFoodItems(foodItemRepository.findAll().stream()
+        return deduplicateFoodItems(foodItemRepository.findByDeletedFalse().stream()
                 .map(this::mapToResponse)
             .collect(Collectors.toList()));
     }
 
     public FoodItemResponse getFoodItemById(Long id) {
-        return mapToResponse(findById(id));
+        return mapToResponse(loadActive(id));
     }
 
     public List<FoodItemResponse> getFoodItemsByCategory(Long categoryId) {
-        return deduplicateFoodItems(foodItemRepository.findByCategoryId(categoryId).stream()
+        return deduplicateFoodItems(foodItemRepository.findByCategoryIdAndDeletedFalse(categoryId).stream()
                 .map(this::mapToResponse)
             .collect(Collectors.toList()));
     }
 
     public List<FoodItemResponse> getAvailableFoodItems() {
-        return deduplicateFoodItems(foodItemRepository.findByStatus(FoodItemStatus.AVAILABLE).stream()
+        return deduplicateFoodItems(foodItemRepository.findByStatusAndDeletedFalse(FoodItemStatus.AVAILABLE).stream()
                 .map(this::mapToResponse)
             .collect(Collectors.toList()));
     }
 
     public List<FoodItemResponse> searchFoodItems(String name) {
-        return deduplicateFoodItems(foodItemRepository.findByNameContainingIgnoreCase(name).stream()
+        return deduplicateFoodItems(foodItemRepository.findByNameContainingIgnoreCaseAndDeletedFalse(name).stream()
                 .map(this::mapToResponse)
             .collect(Collectors.toList()));
     }
@@ -84,6 +83,7 @@ public class FoodItemService {
                 .price(request.getPrice())
                 .imageUrl(normalizeImageUrl(request.getImageUrl()))
                 .status(request.getStatus() != null ? request.getStatus() : FoodItemStatus.AVAILABLE)
+                .deleted(false)
                 .category(category)
                 .build();
 
@@ -93,7 +93,10 @@ public class FoodItemService {
     @Transactional
     public FoodItemResponse updateFoodItem(Long id, FoodItemRequest request) {
         log.info("Updating food item id: {}", id);
-        FoodItem foodItem = findById(id);
+        FoodItem foodItem = loadForAdmin(id);
+        if (foodItem.isDeleted()) {
+            throw new BusinessException("This food item was already removed from the menu.");
+        }
 
         Category category = categoryRepository.findById(request.getCategoryId())
                 .orElseThrow(() -> new ResourceNotFoundException("Category", request.getCategoryId()));
@@ -110,8 +113,12 @@ public class FoodItemService {
 
     @Transactional
     public void deleteFoodItem(Long id) {
-        log.info("Deleting food item id: {} (admin: clearing carts and order FKs)", id);
-        findById(id);
+        log.info("Soft-deleting food item id: {} (hide from menu; keep DB row for orders)", id);
+        FoodItem item = loadForAdmin(id);
+        if (item.isDeleted()) {
+            log.debug("Food item id {} already soft-deleted", id);
+            return;
+        }
 
         List<CartItem> cartLines = cartItemRepository.findByFoodItem_Id(id);
         Set<Long> affectedCartIds = cartLines.stream()
@@ -129,17 +136,22 @@ public class FoodItemService {
             });
         }
 
-        orderItemRepository.detachAllLinesFromFoodItem(id);
-        entityManager.flush();
-        entityManager.clear();
-
-        foodItemRepository.deleteById(id);
-        foodItemRepository.flush();
+        item.setDeleted(true);
+        item.setStatus(FoodItemStatus.OUT_OF_STOCK);
+        foodItemRepository.save(item);
     }
 
-    public FoodItem findById(Long id) {
+    private FoodItem loadForAdmin(Long id) {
         return foodItemRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Food item", id));
+    }
+
+    private FoodItem loadActive(Long id) {
+        FoodItem item = loadForAdmin(id);
+        if (item.isDeleted()) {
+            throw new ResourceNotFoundException("Food item", id);
+        }
+        return item;
     }
 
     private FoodItemResponse mapToResponse(FoodItem item) {

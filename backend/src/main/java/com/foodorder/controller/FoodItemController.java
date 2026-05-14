@@ -80,6 +80,6 @@ public class FoodItemController {
 	public ResponseEntity<ApiResponse<Void>> deleteFoodItem(@PathVariable Long id) {
 		log.info("DELETE /api/food-items/{}", id);
 		foodItemService.deleteFoodItem(id);
-		return ResponseEntity.ok(ApiResponse.success("Food item deleted successfully", null));
+		return ResponseEntity.ok(ApiResponse.success("Food item removed from the menu.", null));
 	}
 }

@@ -46,6 +46,10 @@ public class CartService {
         FoodItem foodItem = foodItemRepository.findById(request.getFoodItemId())
                 .orElseThrow(() -> new ResourceNotFoundException("Food item", request.getFoodItemId()));
 
+        if (foodItem.isDeleted()) {
+            throw new BusinessException("This food item is no longer available.");
+        }
+
         // Check if item is available
         if (foodItem.getStatus() == FoodItemStatus.OUT_OF_STOCK) {
             throw new BusinessException("Food item is out of stock: " + foodItem.getName());
