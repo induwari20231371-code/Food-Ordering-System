@@ -6,8 +6,10 @@ import com.foodorder.entity.FoodItem;
 import com.foodorder.enums.FoodItemStatus;
 import com.foodorder.exception.DuplicateResourceException;
 import com.foodorder.exception.ResourceNotFoundException;
+import com.foodorder.repository.CartItemRepository;
 import com.foodorder.repository.CategoryRepository;
 import com.foodorder.repository.FoodItemRepository;
+import com.foodorder.repository.OrderItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,8 @@ public class CategoryService {
 
     private final CategoryRepository categoryRepository;
     private final FoodItemRepository foodItemRepository;
+    private final CartItemRepository cartItemRepository;
+    private final OrderItemRepository orderItemRepository;
 
     public List<Category> getAllCategories() {
         log.debug("Fetching all categories");
@@ -65,17 +69,25 @@ public class CategoryService {
     public void deleteCategory(Long id) {
         log.info("Deleting category id: {}", id);
         Category category = getCategoryById(id);
-        
-        // Soft-delete all non-deleted food items in this category
-        List<FoodItem> items = foodItemRepository.findByCategoryIdAndDeletedFalse(id);
-        items.forEach(item -> {
+
+        // Handle ALL food items in this category (including already-deleted ones)
+        // because their FK to category_id would still block the category delete
+        List<FoodItem> allItems = foodItemRepository.findByCategoryId(id);
+        for (FoodItem item : allItems) {
+            // 1. Remove from any active carts (cart_items.food_item_id is NOT NULL)
+            cartItemRepository.deleteAllByFoodItemId(item.getId());
+
+            // 2. Nullify the FK in order_items so order history is preserved
+            orderItemRepository.nullifyFoodItemReference(item.getId());
+
+            // 3. Soft-delete the food item
             item.setDeleted(true);
             item.setStatus(FoodItemStatus.OUT_OF_STOCK);
-        });
-        if (!items.isEmpty()) {
-            foodItemRepository.saveAll(items);
         }
-        
+        if (!allItems.isEmpty()) {
+            foodItemRepository.saveAll(allItems);
+        }
+
         categoryRepository.delete(category);
         log.info("Category {} deleted successfully", id);
     }

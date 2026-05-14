@@ -13,6 +13,8 @@ public interface FoodItemRepository extends JpaRepository<FoodItem, Long> {
 
     List<FoodItem> findByCategoryIdAndDeletedFalse(Long categoryId);
 
+    List<FoodItem> findByCategoryId(Long categoryId);
+
     List<FoodItem> findByStatusAndDeletedFalse(FoodItemStatus status);
 
     List<FoodItem> findByCategoryIdAndStatusAndDeletedFalse(Long categoryId, FoodItemStatus status);
