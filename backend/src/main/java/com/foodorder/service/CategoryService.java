@@ -9,6 +9,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.foodorder.entity.FoodItem;
+import com.foodorder.enums.FoodItemStatus;
+import com.foodorder.repository.FoodItemRepository;
 
 import java.util.List;
 
@@ -21,6 +24,7 @@ import java.util.List;
 public class CategoryService {
 
     private final CategoryRepository categoryRepository;
+    private final FoodItemRepository foodItemRepository;
 
     public List<Category> getAllCategories() {
         log.debug("Fetching all categories");
