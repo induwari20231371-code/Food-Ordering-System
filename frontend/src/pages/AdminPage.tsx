@@ -173,7 +173,7 @@ function FoodItemsTab() {
 // ─── Categories Tab ───────────────────────────────────────────
 function CategoriesTab() {
   const [cats,    setCats]    = useState<any[]>([])
-  const [form,    setForm]    = useState({ name:'', description:'' })
+  const [form,    setForm]    = useState({ name: '' })
   const [editId,  setEditId]  = useState<any>(null)
 
   const fetchAll = async () => {
@@ -192,7 +192,7 @@ function CategoriesTab() {
     try {
       if (editId) { await categoryAPI.update(editId, form); toast.success('Updated!') }
       else        { await categoryAPI.create(form);          toast.success('Created!') }
-      setForm({ name:'', description:'' }); setEditId(null); fetchAll()
+      setForm({ name: '' }); setEditId(null); fetchAll()
     } catch (err: any) { toast.error(err.response?.data?.message || 'Error') }
   }
 
@@ -207,16 +207,13 @@ function CategoriesTab() {
       <div className="bg-white rounded-2xl shadow-sm p-6">
         <h3 className="font-bold text-gray-800 mb-4">{editId ? 'Edit Category' : 'Add New Category'}</h3>
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
-          <input value={form.name} onChange={e => setForm({...form,name:e.target.value})}
+          <input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
             placeholder="Category name e.g. Pizza" required
-            className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" />
-          <input value={form.description} onChange={e => setForm({...form,description:e.target.value})}
-            placeholder="Description (optional)"
             className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" />
           <button type="submit" className="bg-orange-500 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition-colors">
             {editId ? 'Update' : 'Add'}
           </button>
-          {editId && <button type="button" onClick={() => { setEditId(null); setForm({name:'',description:''}) }}
+          {editId && <button type="button" onClick={() => { setEditId(null); setForm({ name: '' }) }}
             className="bg-gray-100 text-gray-600 px-4 py-2 rounded-lg text-sm hover:bg-gray-200">Cancel</button>}
         </form>
       </div>
@@ -224,15 +221,14 @@ function CategoriesTab() {
       <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
         <table className="w-full text-sm">
           <thead className="bg-orange-50 text-gray-600">
-            <tr>{['Name','Description','Actions'].map(h => <th key={h} className="px-4 py-3 text-left font-medium">{h}</th>)}</tr>
+            <tr>{['Name', 'Actions'].map(h => <th key={h} className="px-4 py-3 text-left font-medium">{h}</th>)}</tr>
           </thead>
           <tbody className="divide-y divide-gray-50">
             {cats.map(cat => (
               <tr key={cat.id} className="hover:bg-gray-50">
                 <td className="px-4 py-3 font-medium text-gray-800">{cat.name}</td>
-                <td className="px-4 py-3 text-gray-500">{cat.description || '—'}</td>
                 <td className="px-4 py-3 flex gap-2">
-                  <button onClick={() => { setEditId(cat.id); setForm({name:cat.name,description:cat.description||''}) }}
+                  <button onClick={() => { setEditId(cat.id); setForm({ name: cat.name }) }}
                     className="text-blue-500 hover:text-blue-700 text-xs font-medium">Edit</button>
                   <button onClick={() => handleDelete(cat.id)} className="text-red-400 hover:text-red-600 text-xs font-medium">Delete</button>
                 </td>

@@ -51,8 +51,12 @@ public class CategoryService {
         log.info("Updating category id: {}", id);
         Category category = getCategoryById(id);
         category.setName(request.getName());
-        category.setDescription(request.getDescription());
-        category.setImageUrl(request.getImageUrl());
+        if (request.getDescription() != null) {
+            category.setDescription(request.getDescription());
+        }
+        if (request.getImageUrl() != null) {
+            category.setImageUrl(request.getImageUrl());
+        }
         return categoryRepository.save(category);
     }
 
