@@ -68,6 +68,15 @@ public class CategoryService {
     public void deleteCategory(Long id) {
         log.info("Deleting category id: {}", id);
         Category category = getCategoryById(id);
+
+        // Soft-delete all food items in this category first
+        List<FoodItem> items = foodItemRepository.findByCategoryIdAndDeletedFalse(id);
+        for (FoodItem item : items) {
+            item.setDeleted(true);
+            item.setStatus(FoodItemStatus.OUT_OF_STOCK);
+            foodItemRepository.save(item);
+        }
+
         categoryRepository.delete(category);
-    }
+    }   
 }
