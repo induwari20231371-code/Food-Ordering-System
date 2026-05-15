@@ -1,1 +1,0 @@
--- Categories are managed via the admin panel.
