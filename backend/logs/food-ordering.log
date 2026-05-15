@@ -5170,3 +5170,38 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (usi
 2026-05-15T14:58:46.717+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-8] com.foodorder.service.CategoryService    : Fetching all categories
 2026-05-15T14:58:47.052+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
 2026-05-15T14:58:47.067+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-7] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
+2026-05-15T15:01:51.925+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-2] c.foodorder.controller.AuthController    : POST /api/auth/signup - email: admin1@quicdwadaite.com
+2026-05-15T15:01:51.926+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.AuthService        : Registering new user with email: admin1@quicdwadaite.com
+2026-05-15T15:01:52.076+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.AuthService        : Created cart for user: admin1@quicdwadaite.com
+2026-05-15T15:01:52.077+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-2] com.foodorder.service.AuthService        : User registered successfully: admin1@quicdwadaite.com
+2026-05-15T15:01:52.125+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quicdwadaite.com
+2026-05-15T15:01:54.370+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quicdwadaite.com
+2026-05-15T15:01:54.389+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quicdwadaite.com
+2026-05-15T15:01:56.298+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quicdwadaite.com
+2026-05-15T15:01:56.314+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-5] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 2
+2026-05-15T15:01:56.315+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.CartService        : Adding food item 2 to cart for user 3
+2026-05-15T15:02:55.099+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quicdwadaite.com
+2026-05-15T15:02:55.105+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-4] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 2
+2026-05-15T15:02:55.106+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-4] com.foodorder.service.CartService        : Adding food item 2 to cart for user 3
+2026-05-15T15:02:57.170+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quicdwadaite.com
+2026-05-15T15:02:57.179+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-3] c.foodorder.controller.CartController    : POST /api/cart/items - user: 3, foodItem: 2
+2026-05-15T15:02:57.179+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CartService        : Adding food item 2 to cart for user 3
+2026-05-15T15:02:58.569+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quicdwadaite.com
+2026-05-15T15:02:58.601+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quicdwadaite.com
+2026-05-15T15:05:30.719+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-7] c.foodorder.controller.AuthController    : POST /api/auth/signin - email: admin1@quickbite.com
+2026-05-15T15:05:30.720+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.AuthService        : Sign-in attempt for email: admin1@quickbite.com
+2026-05-15T15:05:30.866+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-7] com.foodorder.service.AuthService        : User signed in successfully: admin1@quickbite.com
+2026-05-15T15:05:30.896+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-2] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
+2026-05-15T15:05:30.896+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-1] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
+2026-05-15T15:05:30.898+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-1] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-15T15:05:30.915+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-9] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
+2026-05-15T15:05:30.915+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-10] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
+2026-05-15T15:05:30.916+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-10] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-15T15:05:46.123+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
+2026-05-15T15:05:46.126+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-5] c.f.controller.FoodItemController        : POST /api/food-items - name: ssssssss
+2026-05-15T15:05:46.127+05:30  INFO 35016 --- [food-ordering-system] [http-nio-8080-exec-5] com.foodorder.service.FoodItemService    : Creating food item: ssssssss
+2026-05-15T15:05:46.149+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-3] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
+2026-05-15T15:05:46.149+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-4] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
+2026-05-15T15:05:46.150+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-3] com.foodorder.service.CategoryService    : Fetching all categories
+2026-05-15T15:05:47.456+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-8] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
+2026-05-15T15:05:47.470+05:30 DEBUG 35016 --- [food-ordering-system] [http-nio-8080-exec-6] c.f.security.JwtAuthenticationFilter     : Authenticated user: admin1@quickbite.com
