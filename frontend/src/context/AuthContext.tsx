@@ -36,6 +36,12 @@ function normalizeSessionUser(raw: Record<string, any>): User {
   }
 }
 
+function normalizeAuthPayload(data: any) {
+  const email = typeof data?.email === 'string' ? data.email.trim() : data?.email
+  const password = typeof data?.password === 'string' ? data.password.trim() : data?.password
+  return { ...data, email, password }
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser]       = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
@@ -68,7 +74,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const signUp = async (data: any) => {
-    const res = await authAPI.signUp(data)
+    const res = await authAPI.signUp(normalizeAuthPayload(data))
     const { token, ...raw } = res.data.data
     const userData = normalizeSessionUser(raw)
     localStorage.setItem('token', token)
@@ -79,7 +85,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const signIn = async (data: any) => {
-    const res = await authAPI.signIn(data)
+    const res = await authAPI.signIn(normalizeAuthPayload(data))
     const { token, ...raw } = res.data.data
     const userData = normalizeSessionUser(raw)
     localStorage.setItem('token', token)
