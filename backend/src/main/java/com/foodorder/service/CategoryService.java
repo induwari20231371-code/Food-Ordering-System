@@ -2,14 +2,15 @@ package com.foodorder.service;
 
 import com.foodorder.dto.CategoryRequest;
 import com.foodorder.entity.Category;
-import com.foodorder.entity.FoodItem;
 import com.foodorder.enums.FoodItemStatus;
 import com.foodorder.exception.DuplicateResourceException;
 import com.foodorder.exception.ResourceNotFoundException;
 import com.foodorder.repository.CartItemRepository;
+import com.foodorder.repository.CartRepository;
 import com.foodorder.repository.CategoryRepository;
 import com.foodorder.repository.FoodItemRepository;
 import com.foodorder.repository.OrderItemRepository;
+import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,8 @@ public class CategoryService {
     private final FoodItemRepository foodItemRepository;
     private final CartItemRepository cartItemRepository;
     private final OrderItemRepository orderItemRepository;
+    private final CartRepository cartRepository;
+    private final EntityManager entityManager;
 
     public List<Category> getAllCategories() {
         log.debug("Fetching all categories");
@@ -70,23 +73,28 @@ public class CategoryService {
         log.info("Deleting category id: {}", id);
         Category category = getCategoryById(id);
 
-        // Get ALL food items in this category (including previously soft-deleted ones)
-        List<FoodItem> allItems = foodItemRepository.findByCategoryId(id);
-        for (FoodItem item : allItems) {
-            // Step 1: Remove from any active carts first (FK constraint)
-            cartItemRepository.deleteAllByFoodItemId(item.getId());
+        List<Long> affectedCartIds = cartItemRepository.findDistinctCartIdsByCategoryId(id);
 
-            // Step 2: Nullify the FK in order_items to preserve order history
-            orderItemRepository.nullifyFoodItemReference(item.getId());
+        // Remove cart lines that still reference items in this category
+        cartItemRepository.deleteAllByFoodItemCategoryId(id);
 
-            // Step 3: Detach food item from category so category can be deleted
-            item.setCategory(null);
-            item.setDeleted(true);
-            item.setStatus(FoodItemStatus.OUT_OF_STOCK);
+        // Preserve order history by clearing food item references
+        orderItemRepository.nullifyFoodItemReferenceByCategoryId(id);
+
+        // Detach all food items from this category and soft-delete them
+        int updatedCount = foodItemRepository.detachCategoryAndSoftDeleteByCategoryId(id, FoodItemStatus.OUT_OF_STOCK);
+        if (updatedCount > 0) {
+            log.debug("Detached {} food items from category {}", updatedCount, id);
         }
-        if (!allItems.isEmpty()) {
-            foodItemRepository.saveAll(allItems);
-            foodItemRepository.flush(); // ensure FK is cleared before category delete
+        entityManager.flush();
+
+        // Recalculate totals for carts affected by deleted category items
+        for (Long cartId : affectedCartIds) {
+            cartRepository.findById(cartId).ifPresent(cart -> {
+                entityManager.refresh(cart);
+                cart.recalculateTotal();
+                cartRepository.save(cart);
+            });
         }
 
         categoryRepository.delete(category);

@@ -13,4 +13,8 @@ public interface OrderItemRepository extends JpaRepository<OrderItem, Long> {
     @Modifying
     @Query("UPDATE OrderItem o SET o.foodItem = null WHERE o.foodItem.id = :foodItemId")
     void nullifyFoodItemReference(@Param("foodItemId") Long foodItemId);
+
+    @Modifying
+    @Query("UPDATE OrderItem o SET o.foodItem = null WHERE o.foodItem.category.id = :categoryId")
+    int nullifyFoodItemReferenceByCategoryId(@Param("categoryId") Long categoryId);
 }

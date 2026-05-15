@@ -51,22 +51,24 @@ public class AuthService {
      */
     @Transactional
     public AuthResponse signUp(SignUpRequest request) {
-        log.info("Registering new user with email: {}", request.getEmail());
+        String normalizedEmail = normalizeEmail(request.getEmail());
+        String normalizedPassword = normalizePassword(request.getPassword());
+        log.info("Registering new user with email: {}", normalizedEmail);
 
         if (Role.ADMIN.equals(request.getRole())) {
             throw new BusinessException("Admin accounts cannot be self-registered. Use predefined admin credentials.");
         }
 
         // Check if email is already in use
-        if (userRepository.existsByEmail(request.getEmail())) {
-            throw new DuplicateResourceException("Email already registered: " + request.getEmail());
+        if (userRepository.existsByEmail(normalizedEmail)) {
+            throw new DuplicateResourceException("Email already registered: " + normalizedEmail);
         }
 
         // Build user entity
         User user = User.builder()
                 .name(request.getName())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
+                .email(normalizedEmail)
+                .password(passwordEncoder.encode(normalizedPassword))
                 .phone(request.getPhone())
             .role(Role.CUSTOMER)
                 .build();
@@ -93,11 +95,13 @@ public class AuthService {
      * @return AuthResponse with JWT token and user info
      */
     public AuthResponse signIn(SignInRequest request) {
-        log.info("Sign-in attempt for email: {}", request.getEmail());
+        String normalizedEmail = normalizeEmail(request.getEmail());
+        String normalizedPassword = normalizePassword(request.getPassword());
+        log.info("Sign-in attempt for email: {}", normalizedEmail);
 
         // Throws BadCredentialsException if authentication fails
         Authentication auth = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
+            new UsernamePasswordAuthenticationToken(normalizedEmail, normalizedPassword)
         );
 
         User user = (User) auth.getPrincipal();
@@ -116,8 +120,9 @@ public class AuthService {
      * Returns the currently authenticated user profile.
      */
     public CurrentUserResponse getCurrentUser(String email) {
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found: " + email));
+        String normalizedEmail = normalizeEmail(email);
+        User user = userRepository.findByEmail(normalizedEmail)
+            .orElseThrow(() -> new ResourceNotFoundException("User not found: " + normalizedEmail));
 
         return CurrentUserResponse.builder()
                 .userId(user.getId())
@@ -135,5 +140,13 @@ public class AuthService {
                 .email(user.getEmail())
                 .role(user.getRole().name())
                 .build();
+    }
+
+    private String normalizeEmail(String email) {
+        return email == null ? null : email.trim().toLowerCase();
+    }
+
+    private String normalizePassword(String password) {
+        return password == null ? null : password.trim();
     }
 }

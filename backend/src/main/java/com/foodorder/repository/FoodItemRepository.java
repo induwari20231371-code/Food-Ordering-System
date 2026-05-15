@@ -3,6 +3,9 @@ package com.foodorder.repository;
 import com.foodorder.entity.FoodItem;
 import com.foodorder.enums.FoodItemStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,4 +23,9 @@ public interface FoodItemRepository extends JpaRepository<FoodItem, Long> {
     List<FoodItem> findByCategoryIdAndStatusAndDeletedFalse(Long categoryId, FoodItemStatus status);
 
     List<FoodItem> findByNameContainingIgnoreCaseAndDeletedFalse(String name);
+
+    @Modifying
+    @Query("UPDATE FoodItem f SET f.category = null, f.deleted = true, f.status = :status WHERE f.category.id = :categoryId")
+    int detachCategoryAndSoftDeleteByCategoryId(@Param("categoryId") Long categoryId,
+                                                @Param("status") FoodItemStatus status);
 }

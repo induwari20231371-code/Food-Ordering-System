@@ -17,7 +17,14 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long> {
 
     List<CartItem> findByFoodItem_Id(Long foodItemId);
 
+    @Query("SELECT DISTINCT c.cart.id FROM CartItem c WHERE c.foodItem.category.id = :categoryId")
+    List<Long> findDistinctCartIdsByCategoryId(@Param("categoryId") Long categoryId);
+
     @Modifying
     @Query("DELETE FROM CartItem c WHERE c.foodItem.id = :foodItemId")
     void deleteAllByFoodItemId(@Param("foodItemId") Long foodItemId);
+
+    @Modifying
+    @Query("DELETE FROM CartItem c WHERE c.foodItem.category.id = :categoryId")
+    void deleteAllByFoodItemCategoryId(@Param("categoryId") Long categoryId);
 }
