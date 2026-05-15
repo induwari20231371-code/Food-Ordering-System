@@ -70,22 +70,23 @@ public class CategoryService {
         log.info("Deleting category id: {}", id);
         Category category = getCategoryById(id);
 
-        // Handle ALL food items in this category (including already-deleted ones)
-        // because their FK to category_id would still block the category delete
+        // Get ALL food items in this category (including previously soft-deleted ones)
         List<FoodItem> allItems = foodItemRepository.findByCategoryId(id);
         for (FoodItem item : allItems) {
-            // 1. Remove from any active carts (cart_items.food_item_id is NOT NULL)
+            // Step 1: Remove from any active carts first (FK constraint)
             cartItemRepository.deleteAllByFoodItemId(item.getId());
 
-            // 2. Nullify the FK in order_items so order history is preserved
+            // Step 2: Nullify the FK in order_items to preserve order history
             orderItemRepository.nullifyFoodItemReference(item.getId());
 
-            // 3. Soft-delete the food item
+            // Step 3: Detach food item from category so category can be deleted
+            item.setCategory(null);
             item.setDeleted(true);
             item.setStatus(FoodItemStatus.OUT_OF_STOCK);
         }
         if (!allItems.isEmpty()) {
             foodItemRepository.saveAll(allItems);
+            foodItemRepository.flush(); // ensure FK is cleared before category delete
         }
 
         categoryRepository.delete(category);
